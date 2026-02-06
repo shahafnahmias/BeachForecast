@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                        "surface-dark": "#1a2e32",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #224249;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex justify-center">
+<div class="w-full max-w-[430px] min-h-screen flex flex-col bg-background-light dark:bg-background-dark shadow-2xl relative overflow-x-hidden">
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-primary flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Detailed Weekly Forecast</h2>
+<div class="size-12 flex items-center justify-end">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+</div>
+</div>
+<div class="px-4 pb-3">
+<div class="bg-slate-100 dark:bg-[#1a2e32] rounded-lg p-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-sm font-medium text-slate-600 dark:text-slate-300">Hilton Beach, Tel Aviv</span>
+</div>
+</div>
+<div class="h-[1px] bg-slate-200 dark:bg-[#224249]"></div>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar pb-24">
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer bg-primary/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Today</span>
+<span class="text-lg font-bold">Mon, Oct 24</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-primary font-bold">1.2 - 1.8m</span>
+<span class="text-xs text-emerald-400 font-medium uppercase">Epic Conditions</span>
+</div>
+<span class="material-symbols-outlined text-primary transition-transform rotate-180">expand_more</span>
+</div>
+</div>
+<div class="px-4 pb-6 bg-primary/5">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-100 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-sm block mb-1">air</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Wind</span>
+<p class="text-sm font-bold">12kts NW</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-100 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-sm block mb-1">water</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Swell</span>
+<p class="text-sm font-bold">1.5m @ 8s</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-100 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-sm block mb-1">thermostat</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Sea Temp</span>
+<p class="text-sm font-bold">24°C</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-100 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-sm block mb-1">wb_sunny</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">UV Index</span>
+<p class="text-sm font-bold">6 High</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-100 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-sm block mb-1">tsunami</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Tide</span>
+<p class="text-sm font-bold">0.4m Low</p>
+</div>
+<div class="bg-white dark:bg-surface-dark p-3 rounded-xl border border-slate-100 dark:border-white/5">
+<span class="material-symbols-outlined text-primary text-sm block mb-1">visibility</span>
+<span class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Visibility</span>
+<p class="text-sm font-bold">10km</p>
+</div>
+</div>
+<div class="bg-white/50 dark:bg-black/20 rounded-xl p-3">
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase font-bold tracking-widest mb-2 text-center">Best For</p>
+<div class="flex justify-around items-center">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined filled text-primary">pool</span>
+<span class="text-[10px] font-medium">Swim</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined filled text-primary">surfing</span>
+<span class="text-[10px] font-medium">Surf</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined filled text-primary">sailing</span>
+<span class="text-[10px] font-medium">Kite</span>
+</div>
+<div class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-symbols-outlined">kayaking</span>
+<span class="text-[10px] font-medium">SAP</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer active:bg-slate-100 dark:active:bg-white/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Tomorrow</span>
+<span class="text-lg font-bold">Tue, Oct 25</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-slate-900 dark:text-white font-bold">0.8 - 1.2m</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Fair Conditions</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer active:bg-slate-100 dark:active:bg-white/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Wednesday</span>
+<span class="text-lg font-bold">Oct 26</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-slate-900 dark:text-white font-bold">0.5 - 0.7m</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Flat</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer active:bg-slate-100 dark:active:bg-white/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Thursday</span>
+<span class="text-lg font-bold">Oct 27</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-primary font-bold">1.4 - 2.1m</span>
+<span class="text-xs text-emerald-400 font-medium uppercase">Rising Swell</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer active:bg-slate-100 dark:active:bg-white/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Friday</span>
+<span class="text-lg font-bold">Oct 28</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-slate-900 dark:text-white font-bold">1.1 - 1.5m</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Good</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer active:bg-slate-100 dark:active:bg-white/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Saturday</span>
+<span class="text-lg font-bold">Oct 29</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-slate-900 dark:text-white font-bold">0.9 - 1.3m</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Clean</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="border-b border-slate-200 dark:border-[#224249]/50">
+<div class="flex items-center justify-between px-4 py-5 cursor-pointer active:bg-slate-100 dark:active:bg-white/5">
+<div class="flex flex-col">
+<span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-widest">Sunday</span>
+<span class="text-lg font-bold">Oct 30</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="text-right">
+<span class="block text-slate-900 dark:text-white font-bold">0.6 - 0.9m</span>
+<span class="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase">Soft</span>
+</div>
+<span class="material-symbols-outlined text-slate-400">expand_more</span>
+</div>
+</div>
+</div>
+<div class="mt-8 px-4 text-center">
+<p class="text-slate-500 dark:text-slate-500 text-[10px] uppercase font-bold tracking-[0.2em]">Data provided by Israel Marine Data Center</p>
+</div>
+</div>
+<div class="fixed bottom-0 w-full max-w-[430px] bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-slate-200 dark:border-[#224249] z-50">
+<div class="flex justify-around items-center h-16 px-4">
+<div class="flex flex-col items-center gap-0.5 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined filled">stacked_line_chart</span>
+<span class="text-[10px] font-bold">Forecast</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-slate-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">Explore</span>
+</div>
+<div class="flex flex-col items-center gap-0.5 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</div>
+</div>
+<div class="h-6 w-full flex items-center justify-center pb-2">
+<div class="w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+</div>
+</div>
+</div>
+
+</body></html>

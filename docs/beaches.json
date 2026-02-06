@@ -1,0 +1,284 @@
+[
+  {
+    "name_he": "בצת",
+    "name_en": "Bezet Beach",
+    "latitude": 33.0708,
+    "longitude": 35.1361
+  },
+  {
+    "name_he": "ג'סר א זרקא",
+    "name_en": "Jisr az-Zarqa",
+    "latitude": 32.536261,
+    "longitude": 34.911571
+  },
+  {
+    "name_he": "חוף אולגה",
+    "name_en": "Givat Olga Beach",
+    "latitude": 32.44192,
+    "longitude": 34.9039
+  },
+  {
+    "name_he": "חיפה",
+    "name_en": "Haifa",
+    "latitude": 32.794044,
+    "longitude": 34.989571
+  },
+  {
+    "name_he": "חיפה - בקדור",
+    "name_en": "Haifa - Backdoor",
+    "latitude": 32.794044,
+    "longitude": 34.989571
+  },
+  {
+    "name_he": "חיפה - הפיק",
+    "name_en": "Haifa - The Peak",
+    "latitude": 32.794044,
+    "longitude": 34.989571
+  },
+  {
+    "name_he": "חיפה - קדרים",
+    "name_en": "Haifa - Kadarim",
+    "latitude": 32.794044,
+    "longitude": 34.989571
+  },
+  {
+    "name_he": "מעגן מיכאל",
+    "name_en": "Ma'agan Michael",
+    "latitude": 32.555833,
+    "longitude": 34.906944
+  },
+  {
+    "name_he": "נהריה - סוקולוב",
+    "name_en": "Nahariya - Sokolov",
+    "latitude": 33.01135,
+    "longitude": 35.09467
+  },
+  {
+    "name_he": "נווה ים",
+    "name_en": "Neve Yam",
+    "latitude": 32.6812,
+    "longitude": 34.9329
+  },
+  {
+    "name_he": "נחשולים",
+    "name_en": "Nahsholim",
+    "latitude": 32.61309,
+    "longitude": 34.92225
+  },
+  {
+    "name_he": "עכו",
+    "name_en": "Akko (Acre)",
+    "latitude": 32.933052,
+    "longitude": 35.082678
+  },
+  {
+    "name_he": "עתלית",
+    "name_en": "Atlit",
+    "latitude": 32.688889,
+    "longitude": 34.942361
+  },
+  {
+    "name_he": "קיסריה",
+    "name_en": "Caesarea",
+    "latitude": 32.519016,
+    "longitude": 34.904545
+  },
+  {
+    "name_he": "קרית חיים",
+    "name_en": "Kiryat Haim Beach",
+    "latitude": 32.836292,
+    "longitude": 35.053661
+  },
+  {
+    "name_he": "קרית ים",
+    "name_en": "Kiryat Yam Beach",
+    "latitude": 32.848154,
+    "longitude": 35.061107
+  },
+  {
+    "name_he": "שבי ציון",
+    "name_en": "Shavei Tzion Beach",
+    "latitude": 32.9928,
+    "longitude": 34.9893
+  },
+  {
+    "name_he": "שדות ים",
+    "name_en": "Sdot Yam",
+    "latitude": 32.492613,
+    "longitude": 34.89315
+  },
+  {
+    "name_he": "בית ינאי",
+    "name_en": "Beit Yanai Beach",
+    "latitude": 32.387145,
+    "longitude": 34.864046
+  },
+  {
+    "name_he": "בת ים",
+    "name_en": "Bat Yam Beach",
+    "latitude": 32.017136,
+    "longitude": 34.745441
+  },
+  {
+    "name_he": "הרצליה",
+    "name_en": "Herzliya Beach",
+    "latitude": 32.166313,
+    "longitude": 34.843311
+  },
+  {
+    "name_he": "הרצליה - זבולון",
+    "name_en": "Herzliya - Zvulun",
+    "latitude": 32.166313,
+    "longitude": 34.843311
+  },
+  {
+    "name_he": "הרצליה - מרינה",
+    "name_en": "Herzliya Marina",
+    "latitude": 32.1624,
+    "longitude": 34.8447
+  },
+  {
+    "name_he": "הרצליה - מרינה דרומי",
+    "name_en": "Herzliya Marina South",
+    "latitude": 32.159,
+    "longitude": 34.842
+  },
+  {
+    "name_he": "מכמורת",
+    "name_en": "Mikhmoret",
+    "latitude": 32.406504,
+    "longitude": 34.871551
+  },
+  {
+    "name_he": "נתניה",
+    "name_en": "Netanya Main Beach",
+    "latitude": 32.321457,
+    "longitude": 34.853197
+  },
+  {
+    "name_he": "נתניה - חוף פולג",
+    "name_en": "Netanya - Poleg Beach",
+    "latitude": 32.273356,
+    "longitude": 34.833396
+  },
+  {
+    "name_he": "נתניה - סירונית",
+    "name_en": "Netanya - Sironit Beach",
+    "latitude": 32.33,
+    "longitude": 34.85
+  },
+  {
+    "name_he": "פלמחים",
+    "name_en": "Palmachim Beach",
+    "latitude": 31.928409,
+    "longitude": 34.69836
+  },
+  {
+    "name_he": "ראשון לציון",
+    "name_en": "Rishon LeZion Beach",
+    "latitude": 31.97,
+    "longitude": 34.745
+  },
+  {
+    "name_he": "תל אביב",
+    "name_en": "Tel Aviv - Central Beachfront",
+    "latitude": 32.08,
+    "longitude": 34.77
+  },
+  {
+    "name_he": "ת\"א - דולפינריום",
+    "name_en": "Tel Aviv - Dolphinarium",
+    "latitude": 32.067,
+    "longitude": 34.763
+  },
+  {
+    "name_he": "ת\"א - הילטון",
+    "name_en": "Tel Aviv - Hilton Beach",
+    "latitude": 32.09046,
+    "longitude": 34.76945
+  },
+  {
+    "name_he": "ת\"א - הצוק",
+    "name_en": "Tel Aviv - HaTzuk (Cliff) Beach",
+    "latitude": 32.145,
+    "longitude": 34.795
+  },
+  {
+    "name_he": "ת\"א - חוף מערבי",
+    "name_en": "Tel Aviv - West Beach",
+    "latitude": 32.078,
+    "longitude": 34.765
+  },
+  {
+    "name_he": "ת\"א - טופסי",
+    "name_en": "Tel Aviv - Topsea",
+    "latitude": 32.154,
+    "longitude": 34.792
+  },
+  {
+    "name_he": "ת\"א - תל ברוך",
+    "name_en": "Tel Aviv - Tel Baruch Beach",
+    "latitude": 32.129,
+    "longitude": 34.788
+  },
+  {
+    "name_he": "אשדוד",
+    "name_en": "Ashdod Beach (Central)",
+    "latitude": 31.79213,
+    "longitude": 34.64966
+  },
+  {
+    "name_he": "אשדוד - חוף גיל",
+    "name_en": "Ashdod - Gil Beach",
+    "latitude": 31.801,
+    "longitude": 34.642
+  },
+  {
+    "name_he": "אשדוד - חוף הקשתות",
+    "name_en": "Ashdod - HaKshatot (Arches) Beach",
+    "latitude": 31.8,
+    "longitude": 34.638
+  },
+  {
+    "name_he": "אשדוד - מי עמי",
+    "name_en": "Ashdod - Mei Ami Beach",
+    "latitude": 31.785,
+    "longitude": 34.645
+  },
+  {
+    "name_he": "אשדוד - מצודה",
+    "name_en": "Ashdod - Mitzuda (Fortress) Beach",
+    "latitude": 31.776,
+    "longitude": 34.637
+  },
+  {
+    "name_he": "אשקלון",
+    "name_en": "Ashkelon Beach",
+    "latitude": 31.6693,
+    "longitude": 34.5715
+  },
+  {
+    "name_he": "זיקים",
+    "name_en": "Zikim Beach",
+    "latitude": 31.6127,
+    "longitude": 34.5045
+  },
+  {
+    "name_he": "ניצנים",
+    "name_en": "Nitzanim Beach",
+    "latitude": 31.74554,
+    "longitude": 34.600582
+  },
+  {
+    "name_he": "אילת",
+    "name_en": "Eilat Beachfront",
+    "latitude": 29.55805,
+    "longitude": 34.94821
+  },
+  {
+    "name_he": "כנרת",
+    "name_en": "Sea of Galilee (Kinneret) Beaches",
+    "latitude": 32.8333,
+    "longitude": 35.5833
+  }
+]

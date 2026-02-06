@@ -1,0 +1,1098 @@
+{
+  "beach_slug": "tel-baruch",
+  "beach_name": "תחזית גלים תל אביב - תל ברוך - מצב הים, גובה גלים ורוח - GoSurf",
+  "spot_id": 34,
+  "fetched_at": "2025-12-05T23:12:05.985436+00:00",
+  "weekly_wave_data": [
+    57.93,
+    71.56,
+    73.09,
+    72.3,
+    96.67,
+    125.52,
+    118.52,
+    76.15,
+    71.75,
+    79.17,
+    94.62,
+    121.03,
+    117.79,
+    117.36,
+    134.04,
+    128.97,
+    99.38,
+    96.6,
+    83.53,
+    31.49,
+    19.5
+  ],
+  "hourly_forecasts": [
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 10,
+        "max_cm": 20,
+        "avg_cm": 15.0,
+        "avg_m": 0.15
+      },
+      "wind": {
+        "speed_kmh": 10,
+        "speed_ms": 2.78,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 23.0,
+      "swell": {
+        "period_seconds": 5.5,
+        "direction": "צפוני"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 10,
+        "max_cm": 20,
+        "avg_cm": 15.0,
+        "avg_m": 0.15
+      },
+      "wind": {
+        "speed_kmh": 7,
+        "speed_ms": 1.94,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 22.0,
+      "swell": {
+        "period_seconds": 5.4,
+        "direction": "צפוני"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 10,
+        "max_cm": 20,
+        "avg_cm": 15.0,
+        "avg_m": 0.15
+      },
+      "wind": {
+        "speed_kmh": 8,
+        "speed_ms": 2.22,
+        "direction": "דרומית"
+      },
+      "temperature": 21.0,
+      "swell": {
+        "period_seconds": 5.3,
+        "direction": "צפוני"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 20,
+        "max_cm": 30,
+        "avg_cm": 25.0,
+        "avg_m": 0.25
+      },
+      "wind": {
+        "speed_kmh": 6,
+        "speed_ms": 1.67,
+        "direction": "מזרחית"
+      },
+      "temperature": 22.0,
+      "swell": {
+        "period_seconds": 5.0,
+        "direction": "צפון מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 20,
+        "max_cm": 40,
+        "avg_cm": 30.0,
+        "avg_m": 0.3
+      },
+      "wind": {
+        "speed_kmh": 21,
+        "speed_ms": 5.83,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 24.0,
+      "swell": {
+        "period_seconds": 4.8,
+        "direction": "צפון מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 30,
+        "max_cm": 50,
+        "avg_cm": 40.0,
+        "avg_m": 0.4
+      },
+      "wind": {
+        "speed_kmh": 14,
+        "speed_ms": 3.89,
+        "direction": "מערבית"
+      },
+      "temperature": 23.0,
+      "swell": {
+        "period_seconds": 5.5,
+        "direction": "צפון מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 10,
+        "speed_ms": 2.78,
+        "direction": "מערבית"
+      },
+      "temperature": 21.0,
+      "swell": {
+        "period_seconds": 8.9,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 100,
+        "avg_cm": 80.0,
+        "avg_m": 0.8
+      },
+      "wind": {
+        "speed_kmh": 8,
+        "speed_ms": 2.22,
+        "direction": "מערבית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 8.6,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 100,
+        "avg_cm": 80.0,
+        "avg_m": 0.8
+      },
+      "wind": {
+        "speed_kmh": 8,
+        "speed_ms": 2.22,
+        "direction": "מערבית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 8.4,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 90,
+        "avg_cm": 75.0,
+        "avg_m": 0.75
+      },
+      "wind": {
+        "speed_kmh": 10,
+        "speed_ms": 2.78,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 21.0,
+      "swell": {
+        "period_seconds": 8.3,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 90,
+        "avg_cm": 75.0,
+        "avg_m": 0.75
+      },
+      "wind": {
+        "speed_kmh": 11,
+        "speed_ms": 3.06,
+        "direction": "דרומית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 8.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 100,
+        "avg_cm": 80.0,
+        "avg_m": 0.8
+      },
+      "wind": {
+        "speed_kmh": 19,
+        "speed_ms": 5.28,
+        "direction": "דרומית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 8.0,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 110,
+        "avg_cm": 90.0,
+        "avg_m": 0.9
+      },
+      "wind": {
+        "speed_kmh": 28,
+        "speed_ms": 7.78,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 21.0,
+      "swell": {
+        "period_seconds": 8.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 120,
+        "avg_cm": 100.0,
+        "avg_m": 1.0
+      },
+      "wind": {
+        "speed_kmh": 24,
+        "speed_ms": 6.67,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 8.3,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 130,
+        "avg_cm": 105.0,
+        "avg_m": 1.05
+      },
+      "wind": {
+        "speed_kmh": 18,
+        "speed_ms": 5.0,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 8.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 130,
+        "avg_cm": 105.0,
+        "avg_m": 1.05
+      },
+      "wind": {
+        "speed_kmh": 14,
+        "speed_ms": 3.89,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 8.5,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 130,
+        "avg_cm": 105.0,
+        "avg_m": 1.05
+      },
+      "wind": {
+        "speed_kmh": 18,
+        "speed_ms": 5.0,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 8.5,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 130,
+        "avg_cm": 105.0,
+        "avg_m": 1.05
+      },
+      "wind": {
+        "speed_kmh": 21,
+        "speed_ms": 5.83,
+        "direction": "דרומית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 8.3,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 120,
+        "avg_cm": 100.0,
+        "avg_m": 1.0
+      },
+      "wind": {
+        "speed_kmh": 24,
+        "speed_ms": 6.67,
+        "direction": "דרומית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.9,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 120,
+        "avg_cm": 95.0,
+        "avg_m": 0.95
+      },
+      "wind": {
+        "speed_kmh": 28,
+        "speed_ms": 7.78,
+        "direction": "דרומית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 7.5,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 120,
+        "avg_cm": 95.0,
+        "avg_m": 0.95
+      },
+      "wind": {
+        "speed_kmh": 24,
+        "speed_ms": 6.67,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 7.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 120,
+        "avg_cm": 95.0,
+        "avg_m": 0.95
+      },
+      "wind": {
+        "speed_kmh": 21,
+        "speed_ms": 5.83,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 6.9,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 120,
+        "avg_cm": 95.0,
+        "avg_m": 0.95
+      },
+      "wind": {
+        "speed_kmh": 14,
+        "speed_ms": 3.89,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 6.9,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 120,
+        "avg_cm": 95.0,
+        "avg_m": 0.95
+      },
+      "wind": {
+        "speed_kmh": 13,
+        "speed_ms": 3.61,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 7.4,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 120,
+        "avg_cm": 100.0,
+        "avg_m": 1.0
+      },
+      "wind": {
+        "speed_kmh": 6,
+        "speed_ms": 1.67,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 8.9,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 110,
+        "avg_cm": 90.0,
+        "avg_m": 0.9
+      },
+      "wind": {
+        "speed_kmh": 7,
+        "speed_ms": 1.94,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 8.5,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 110,
+        "avg_cm": 90.0,
+        "avg_m": 0.9
+      },
+      "wind": {
+        "speed_kmh": 7,
+        "speed_ms": 1.94,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 8.3,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 100,
+        "avg_cm": 80.0,
+        "avg_m": 0.8
+      },
+      "wind": {
+        "speed_kmh": 7,
+        "speed_ms": 1.94,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 8.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 90,
+        "avg_cm": 70.0,
+        "avg_m": 0.7
+      },
+      "wind": {
+        "speed_kmh": 7,
+        "speed_ms": 1.94,
+        "direction": "מערבית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 8.0,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 21,
+        "speed_ms": 5.83,
+        "direction": "מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 7.8,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 5,
+        "speed_ms": 1.39,
+        "direction": "צפונית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.8,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 70,
+        "avg_cm": 60.0,
+        "avg_m": 0.6
+      },
+      "wind": {
+        "speed_kmh": 12,
+        "speed_ms": 3.33,
+        "direction": "מזרחית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.7,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 70,
+        "avg_cm": 60.0,
+        "avg_m": 0.6
+      },
+      "wind": {
+        "speed_kmh": 3,
+        "speed_ms": 0.83,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.5,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 40,
+        "max_cm": 70,
+        "avg_cm": 55.0,
+        "avg_m": 0.55
+      },
+      "wind": {
+        "speed_kmh": 10,
+        "speed_ms": 2.78,
+        "direction": "דרומית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 7.4,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 70,
+        "avg_cm": 60.0,
+        "avg_m": 0.6
+      },
+      "wind": {
+        "speed_kmh": 19,
+        "speed_ms": 5.28,
+        "direction": "דרומית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 8.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 22,
+        "speed_ms": 6.11,
+        "direction": "דרומית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.8,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 90,
+        "avg_cm": 70.0,
+        "avg_m": 0.7
+      },
+      "wind": {
+        "speed_kmh": 21,
+        "speed_ms": 5.83,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 9.1,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 100,
+        "avg_cm": 80.0,
+        "avg_m": 0.8
+      },
+      "wind": {
+        "speed_kmh": 19,
+        "speed_ms": 5.28,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 9.0,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 120,
+        "avg_cm": 95.0,
+        "avg_m": 0.95
+      },
+      "wind": {
+        "speed_kmh": 16,
+        "speed_ms": 4.44,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 8.4,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 130,
+        "avg_cm": 105.0,
+        "avg_m": 1.05
+      },
+      "wind": {
+        "speed_kmh": 19,
+        "speed_ms": 5.28,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 7.9,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 80,
+        "max_cm": 130,
+        "avg_cm": 105.0,
+        "avg_m": 1.05
+      },
+      "wind": {
+        "speed_kmh": 22,
+        "speed_ms": 6.11,
+        "direction": "דרומית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 8.0,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 110,
+        "avg_cm": 90.0,
+        "avg_m": 0.9
+      },
+      "wind": {
+        "speed_kmh": 18,
+        "speed_ms": 5.0,
+        "direction": "דרומית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.8,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 70,
+        "max_cm": 110,
+        "avg_cm": 90.0,
+        "avg_m": 0.9
+      },
+      "wind": {
+        "speed_kmh": 19,
+        "speed_ms": 5.28,
+        "direction": "דרומית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 7.5,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 60,
+        "max_cm": 100,
+        "avg_cm": 80.0,
+        "avg_m": 0.8
+      },
+      "wind": {
+        "speed_kmh": 22,
+        "speed_ms": 6.11,
+        "direction": "דרומית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 7.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 24,
+        "speed_ms": 6.67,
+        "direction": "דרומית"
+      },
+      "temperature": 20.0,
+      "swell": {
+        "period_seconds": 7.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 23,
+        "speed_ms": 6.39,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 7.3,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 70,
+        "avg_cm": 60.0,
+        "avg_m": 0.6
+      },
+      "wind": {
+        "speed_kmh": 20,
+        "speed_ms": 5.56,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 7.2,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 40,
+        "max_cm": 70,
+        "avg_cm": 55.0,
+        "avg_m": 0.55
+      },
+      "wind": {
+        "speed_kmh": 16,
+        "speed_ms": 4.44,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 7.0,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "00:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 70,
+        "avg_cm": 60.0,
+        "avg_m": 0.6
+      },
+      "wind": {
+        "speed_kmh": 17,
+        "speed_ms": 4.72,
+        "direction": "דרומית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 6.7,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "03:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 24,
+        "speed_ms": 6.67,
+        "direction": "דרומית"
+      },
+      "temperature": 15.0,
+      "swell": {
+        "period_seconds": 6.8,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "06:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 80,
+        "avg_cm": 65.0,
+        "avg_m": 0.65
+      },
+      "wind": {
+        "speed_kmh": 20,
+        "speed_ms": 5.56,
+        "direction": "דרומית"
+      },
+      "temperature": 15.0,
+      "swell": {
+        "period_seconds": 7.1,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "09:00",
+      "wave_height": {
+        "min_cm": 50,
+        "max_cm": 70,
+        "avg_cm": 60.0,
+        "avg_m": 0.6
+      },
+      "wind": {
+        "speed_kmh": 14,
+        "speed_ms": 3.89,
+        "direction": "דרום מזרחית"
+      },
+      "temperature": 17.0,
+      "swell": {
+        "period_seconds": 6.8,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "12:00",
+      "wave_height": {
+        "min_cm": 40,
+        "max_cm": 70,
+        "avg_cm": 55.0,
+        "avg_m": 0.55
+      },
+      "wind": {
+        "speed_kmh": 10,
+        "speed_ms": 2.78,
+        "direction": "דרומית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 6.6,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "15:00",
+      "wave_height": {
+        "min_cm": 40,
+        "max_cm": 60,
+        "avg_cm": 50.0,
+        "avg_m": 0.5
+      },
+      "wind": {
+        "speed_kmh": 11,
+        "speed_ms": 3.06,
+        "direction": "דרום מערבית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 6.4,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "18:00",
+      "wave_height": {
+        "min_cm": 40,
+        "max_cm": 60,
+        "avg_cm": 50.0,
+        "avg_m": 0.5
+      },
+      "wind": {
+        "speed_kmh": 5,
+        "speed_ms": 1.39,
+        "direction": "דרומית"
+      },
+      "temperature": 19.0,
+      "swell": {
+        "period_seconds": 6.3,
+        "direction": "מערבי"
+      }
+    },
+    {
+      "time": "21:00",
+      "wave_height": {
+        "min_cm": 30,
+        "max_cm": 50,
+        "avg_cm": 40.0,
+        "avg_m": 0.4
+      },
+      "wind": {
+        "speed_kmh": 5,
+        "speed_ms": 1.39,
+        "direction": "מזרחית"
+      },
+      "temperature": 18.0,
+      "swell": {
+        "period_seconds": 6.1,
+        "direction": "מערבי"
+      }
+    }
+  ],
+  "metadata": {},
+  "provider": "gosurf",
+  "provider_url": "https://gosurf.co.il/forecast/tel-baruch"
+}

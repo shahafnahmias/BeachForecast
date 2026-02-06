@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Sea Level Widget backend - proxies and caches Open-Meteo API calls
+
+Globals:
+  Function:
+    Timeout: 15
+    Runtime: python3.12
+    MemorySize: 128
+
+Resources:
+  WeatherFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.handler
+      CodeUri: src/weather/
+      Environment:
+        Variables:
+          CACHE_TABLE: !Ref CacheTable
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref CacheTable
+      Events:
+        GetWeather:
+          Type: HttpApi
+          Properties:
+            Path: /weather
+            Method: get
+
+  CacheTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: sea-level-cache
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+
+Outputs:
+  ApiUrl:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.amazonaws.com"
+  WeatherFunctionArn:
+    Description: Weather Lambda function ARN
+    Value: !GetAtt WeatherFunction.Arn

@@ -1,0 +1,383 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Beach Forecast</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_forecast">Forecast</string>
+    <string name="nav_trends">Trends</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Today\'s Conditions</string>
+    <string name="home_current_label">Current</string>
+    <string name="home_refresh">Refresh</string>
+    <string name="home_loading">Loading weather data…</string>
+    <string name="home_error">Error loading data</string>
+    <string name="home_retry">Retry</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_units">Units</string>
+    <string name="settings_use_metric">Use Metric</string>
+    <string name="settings_metric_subtitle">Celsius, cm</string>
+    <string name="settings_imperial_subtitle">Fahrenheit, feet</string>
+    <string name="settings_display_preferences">Display Preferences</string>
+    <string name="settings_important_metrics">Important Metrics</string>
+    <string name="settings_metrics_selected">%1$d selected: %2$s</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_widget_refresh">Widget Refresh Rate</string>
+    <string name="settings_widget_refresh_subtitle">Every 30 minutes</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_about">About</string>
+    <string name="settings_app_version">App Version</string>
+    <string name="settings_data_source">Data Source</string>
+    <string name="settings_data_source_subtitle">Open-Meteo Marine API</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_policy_subtitle">How we handle your data</string>
+    <string name="privacy_policy_full_text">Privacy Policy\n\nLast updated: February 2026\n\nBeach Forecast (\"the App\") respects your privacy. This policy explains what data we collect and how we use it.\n\nData We Collect\nThe App accesses your device\'s location (GPS) solely to determine the nearest beach and provide relevant marine weather data.\n\nHow We Use Your Data\n• Location data is used only to fetch weather forecasts for the closest coastal area.\n• Your preferences (units, theme, language, selected beach) are stored locally on your device.\n\nData Storage\nAll data is stored locally on your device. We do not transmit personal information to any server. Weather data is fetched from the Open-Meteo Marine API using your coordinates; no identifying information is sent.\n\nThird-Party Sharing\nWe do not share, sell, or transfer any personal data to third parties.\n\nAdvertising &amp; Analytics\nThe App contains no ads. We use Firebase Crashlytics and Firebase Analytics to collect anonymous crash reports and usage statistics. No personally identifiable information is collected.\n\nChildren\'s Privacy\nThe App does not knowingly collect data from children under 13.\n\nChanges to This Policy\nWe may update this policy from time to time. Changes will be reflected in the App.\n\nContact\nFor questions, contact us at: beachforecast.app@gmail.com</string>
+    <string name="privacy_policy_dialog_title">Privacy Policy</string>
+    <string name="privacy_policy_close">Close</string>
+
+    <!-- Language Picker -->
+    <string name="language_picker_title">Choose Language</string>
+    <string name="language_english">English</string>
+    <string name="language_hebrew">עברית</string>
+    <string name="language_cancel">Cancel</string>
+
+    <!-- Beach Picker -->
+    <string name="settings_location">Location</string>
+    <string name="settings_beach">Beach</string>
+    <string name="beach_picker_title">Select Beach</string>
+    <string name="beach_auto">Auto (closest to you)</string>
+    <string name="beach_auto_description">Uses GPS to find the nearest beach</string>
+    <string name="beach_nearest_to_you">Nearest to you</string>
+    <string name="beach_unknown">Unknown beach</string>
+
+    <!-- Theme Picker -->
+    <string name="theme_picker_title">Choose Theme</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark_description">Dark theme</string>
+    <string name="theme_light_description">Light theme</string>
+    <string name="theme_cancel">Cancel</string>
+
+    <!-- Metrics Picker -->
+    <string name="metrics_picker_title">Important Metrics</string>
+    <string name="metrics_picker_subtitle">Select metrics to display in forecasts and widget</string>
+    <string name="metrics_save">Save</string>
+    <string name="metrics_cancel">Cancel</string>
+
+    <!-- Sports Picker -->
+    <string name="settings_sports_of_interest">Sports of Interest</string>
+    <string name="sports_picker_title">Sports of Interest</string>
+    <string name="sports_picker_subtitle">Select the water sports you care about</string>
+    <string name="sports_save">Save</string>
+    <string name="sports_cancel">Cancel</string>
+    <string name="settings_sports_selected">%1$d selected: %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">Pick your sports</string>
+    <string name="onboarding_subtitle">We\'ll tailor the forecast and widget to what you care about.</string>
+    <string name="onboarding_continue">Continue</string>
+    <string name="onboarding_at_least_one">Select at least one sport to continue.</string>
+    <string name="onboarding_welcome_title">Welcome to Beach Forecast</string>
+    <string name="onboarding_welcome_subtitle">Your personal beach companion for waves, wind, and weather.</string>
+    <string name="onboarding_get_started">Get Started</string>
+    <string name="onboarding_select_beach">Choose Your Beach</string>
+    <string name="onboarding_select_beach_subtitle">Pick a beach or let us find the closest one to you.</string>
+    <string name="onboarding_select_sports">Pick Your Sports</string>
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_back">Back</string>
+    <string name="onboarding_finish">Finish</string>
+    <string name="onboarding_auto_nearest">Auto (Nearest)</string>
+
+    <!-- Weather Metrics -->
+    <string name="metric_temperature">Temperature</string>
+    <string name="metric_wind">Wind</string>
+    <string name="metric_cloud_cover">Cloud Cover</string>
+    <string name="metric_uv_index">UV Index</string>
+    <string name="metric_swell">Swell</string>
+    <string name="metric_wave_period">Wave Period</string>
+    <string name="metric_swell_period">Swell Period</string>
+
+    <!-- Activities -->
+    <string name="activity_swim">Swim</string>
+    <string name="activity_surf">Surf</string>
+    <string name="activity_kite">Kite</string>
+    <string name="activity_sap">SUP</string>
+
+    <!-- Wave Categories -->
+    <string name="wave_flat">Flat</string>
+    <string name="wave_ankle">Ankle</string>
+    <string name="wave_knee">Knee</string>
+    <string name="wave_waist">Waist</string>
+    <string name="wave_chest">Chest</string>
+    <string name="wave_head_high">Head High</string>
+    <string name="wave_overhead">Overhead</string>
+    <string name="wave_double_overhead">Double Overhead</string>
+    <string name="wave_triple_overhead">Triple Overhead+</string>
+
+    <!-- Widget -->
+    <string name="widget_description">Shows current wave height, swell, wind, and sea temperature for the nearest beach.</string>
+    <string name="widget_small_label">Beach Forecast — Quick Glance</string>
+    <string name="widget_small_description">Quick glance: wave height and condition rating.</string>
+    <string name="widget_medium_label">Beach Forecast — Dashboard</string>
+    <string name="widget_medium_description">Key vitals: wind, swell, sea temp, and activity recommendations.</string>
+    <string name="widget_large_label">Beach Forecast — Full</string>
+    <string name="widget_large_description">Full dashboard with summary, vitals, and activity recommendations.</string>
+    <string name="widget_loading">Loading…</string>
+    <string name="widget_loading_conditions">Loading conditions…</string>
+    <string name="widget_error">Error</string>
+    <string name="widget_today">TODAY</string>
+    <string name="widget_today_forecast">TODAY\'S FORECAST</string>
+    <string name="widget_now">Now</string>
+    <string name="widget_all_day">All Day</string>
+    <string name="widget_current_status">CURRENT STATUS</string>
+    <string name="widget_live_vitals">Live Vitals</string>
+    <string name="widget_wind">WIND</string>
+    <string name="widget_swell">SWELL</string>
+    <string name="widget_sea_temp">SEA TEMP</string>
+    <string name="widget_uv_index_label">UV INDEX</string>
+
+    <!-- Widget Accessibility -->
+    <string name="widget_cd_cloud_icon">Weather conditions</string>
+    <string name="widget_cd_wind_icon">Wind indicator</string>
+    <string name="widget_cd_swell_icon">Swell indicator</string>
+    <string name="widget_cd_sea_temp_icon">Sea temperature indicator</string>
+    <string name="widget_cd_uv_icon">UV index indicator</string>
+
+    <!-- Location Permission Rationale -->
+    <string name="location_rationale_title">Location Access Needed</string>
+    <string name="location_rationale_message">Beach Forecast uses your location to find the nearest beach and show you relevant wave, wind, and weather conditions. Your location is only used locally and is never sent to any server.</string>
+    <string name="location_rationale_allow">Allow</string>
+    <string name="location_rationale_deny">Not Now</string>
+
+    <!-- Location Settings Dialog (permanent denial) -->
+    <string name="location_settings_title">Location Permission Required</string>
+    <string name="location_settings_message">Location access has been permanently denied. To use Beach Forecast, please enable location permission in your device settings.</string>
+    <string name="location_settings_open">Open Settings</string>
+    <string name="location_settings_cancel">Cancel</string>
+
+    <!-- Error Messages (long) -->
+    <string name="error_no_internet">No internet connection.\nCheck your connection and try again.</string>
+    <string name="error_timeout">Request timed out.\nCheck your connection and try again.</string>
+    <string name="error_api">Weather service unavailable.\nTry again in a few minutes.</string>
+    <string name="error_rate_limited">Too many requests.\nPlease wait a few minutes.</string>
+    <string name="error_location_permission">Location access needed.\nGrant permission in settings.</string>
+    <string name="error_location_unavailable">Can\'t find your location.\nEnable GPS or move to better area.</string>
+    <string name="error_location_disabled">GPS is turned off.\nEnable location services.</string>
+    <string name="error_location_timeout">Location search taking too long.\nTry again.</string>
+    <string name="error_no_data">No wave data for this area.\nTry a coastal location.</string>
+    <string name="error_invalid_coordinates">Invalid location.\nMove to a valid area.</string>
+    <string name="error_data_parsing">Data error.\nTry updating the app.</string>
+    <string name="error_unknown">Something went wrong.\nTry again later.</string>
+
+    <!-- Error Messages (short) -->
+    <string name="error_short_no_internet">No Internet</string>
+    <string name="error_short_timeout">Timed Out</string>
+    <string name="error_short_api">Service Error</string>
+    <string name="error_short_rate_limited">Too Many Requests</string>
+    <string name="error_short_location_permission">Permission Needed</string>
+    <string name="error_short_location_unavailable">No Location</string>
+    <string name="error_short_location_disabled">GPS Off</string>
+    <string name="error_short_location_timeout">Location Timeout</string>
+    <string name="error_short_no_data">No Data</string>
+    <string name="error_short_invalid_coordinates">Invalid Location</string>
+    <string name="error_short_data_parsing">Data Error</string>
+    <string name="error_short_unknown">Error</string>
+
+    <!-- Time Labels -->
+    <string name="time_now">Now</string>
+    <string name="time_morning">Morning</string>
+    <string name="time_afternoon">Afternoon</string>
+    <string name="time_evening">Evening</string>
+
+    <!-- Compass Directions -->
+    <string name="direction_n">N</string>
+    <string name="direction_ne">NE</string>
+    <string name="direction_e">E</string>
+    <string name="direction_se">SE</string>
+    <string name="direction_s">S</string>
+    <string name="direction_sw">SW</string>
+    <string name="direction_w">W</string>
+    <string name="direction_nw">NW</string>
+
+    <!-- Wave Summary Templates -->
+    <string name="summary_waves_remain">Waves remain %s.</string>
+    <string name="summary_waves_remain_throughout">Waves remain %s throughout the day.</string>
+    <string name="summary_waves_build">Waves build from %s to %s.</string>
+    <string name="summary_waves_drop">Waves drop from %s to %s.</string>
+    <string name="summary_waves_fluctuate">Waves fluctuate between %s and %s.</string>
+    <string name="summary_waves_minor_variations">Waves remain %s with minor variations.</string>
+
+    <!-- Swell Descriptions -->
+    <string name="summary_minimal_swell">Minimal swell.</string>
+    <string name="summary_light_swell">Light swell.</string>
+    <string name="summary_moderate_swell">Moderate swell.</string>
+    <string name="summary_good_swell">Good swell.</string>
+    <string name="summary_strong_swell">Strong swell.</string>
+
+    <!-- Weather Conditions -->
+    <string name="summary_sunny">Sunny</string>
+    <string name="summary_mostly_sunny">Mostly sunny</string>
+    <string name="summary_partly_cloudy">Partly cloudy</string>
+    <string name="summary_mostly_cloudy">Mostly cloudy</string>
+    <string name="summary_overcast">Overcast</string>
+    <string name="summary_with_very_high_uv">with very high UV</string>
+    <string name="summary_with_high_uv">with high UV</string>
+    <string name="summary_strong_winds">strong winds</string>
+    <string name="summary_moderate_winds">moderate winds</string>
+    <string name="summary_light_winds">light winds</string>
+
+    <!-- Sport Summary -->
+    <string name="summary_good_for_surfing">Good for surfing.</string>
+    <string name="summary_great_for_surfing">Great for surfing!</string>
+    <string name="summary_not_ideal_for_surfing">Not ideal for surfing.</string>
+    <string name="summary_good_for_swimming">Good for swimming.</string>
+    <string name="summary_great_for_swimming">Great for swimming!</string>
+    <string name="summary_not_ideal_for_swimming">Not ideal for swimming.</string>
+    <string name="summary_good_for_kiting">Good for kiting.</string>
+    <string name="summary_great_for_kiting">Great for kiting!</string>
+    <string name="summary_not_ideal_for_kiting">Not ideal for kiting.</string>
+    <string name="summary_good_for_sup">Good for SUP.</string>
+    <string name="summary_great_for_sup">Great for SUP!</string>
+    <string name="summary_not_ideal_for_sup">Not ideal for SUP.</string>
+    <string name="summary_hot_conditions">hot conditions</string>
+    <string name="summary_warm_conditions">warm conditions</string>
+    <string name="summary_cold_conditions">cold conditions</string>
+    <string name="summary_cool_conditions">cool conditions</string>
+
+    <!-- Period Labels -->
+    <string name="period_now">Now</string>
+
+    <!-- Home Screen -->
+    <string name="home_change_beach">Change beach</string>
+    <string name="home_updated">Updated %s</string>
+    <string name="home_todays_conditions">Today\'s Conditions</string>
+    <string name="home_weather_details">Weather Details</string>
+    <string name="home_try_again">Try Again</string>
+    <string name="home_just_now">Just now</string>
+    <string name="home_minutes_ago">%dm ago</string>
+    <string name="home_hours_ago">%dh ago</string>
+    <string name="home_days_ago">%dd ago</string>
+
+    <!-- Weather Detail Labels -->
+    <string name="detail_wind">Wind</string>
+    <string name="detail_wave_period">Wave Period</string>
+    <string name="detail_wave_direction">Wave Direction</string>
+    <string name="detail_swell">Swell</string>
+    <string name="detail_sea_temp">Sea Temp</string>
+    <string name="detail_uv_index">UV Index</string>
+    <string name="uv_low">Low</string>
+    <string name="uv_moderate">Moderate</string>
+    <string name="uv_high">High</string>
+    <string name="uv_very_high">Very High</string>
+    <string name="uv_extreme">Extreme</string>
+
+    <!-- Units -->
+    <string name="unit_cm">cm</string>
+    <string name="unit_now_uppercase">NOW</string>
+
+    <!-- Forecast Screen -->
+    <string name="forecast_title">7-Day Forecast</string>
+    <string name="forecast_morning">Morning</string>
+    <string name="forecast_afternoon">Afternoon</string>
+    <string name="forecast_evening">Evening</string>
+    <string name="forecast_night">Night</string>
+    <string name="forecast_no_hourly_data">No hourly data available</string>
+    <string name="forecast_cd_uv">UV %1$d</string>
+    <string name="forecast_detailed_title">Detailed Weekly Forecast</string>
+    <string name="forecast_today">Today</string>
+    <string name="forecast_tomorrow">Tomorrow</string>
+    <string name="forecast_data_attribution">Data provided by Open-Meteo</string>
+    <string name="forecast_wind">Wind</string>
+    <string name="forecast_swell">Swell</string>
+    <string name="forecast_sea_temp">Sea Temp</string>
+    <string name="forecast_uv_index">UV Index</string>
+    <string name="forecast_best_for">Best For</string>
+    <string name="forecast_best_day_for">Best for %1$s</string>
+
+    <!-- Trends Screen -->
+    <string name="trends_title">Time-Based Ocean Trends</string>
+    <string name="trends_sea_temp">Sea Temp</string>
+    <string name="trends_avg_period">Avg Period</string>
+    <string name="trends_stable">Stable</string>
+    <string name="trends_rising">Rising</string>
+    <string name="trends_falling">Falling</string>
+    <string name="trends_swell_analysis">24H Swell Analysis</string>
+    <string name="trends_height_distribution">Height Distribution</string>
+    <string name="trends_wave_height">Wave Height Trend (24H)</string>
+    <string name="trends_meters">Meters (M)</string>
+    <string name="trends_wave_period">Wave Period Trend (24H)</string>
+    <string name="trends_seconds_unit">Seconds (S)</string>
+    <string name="trends_wind_speed">Wind Speed Trend (24H)</string>
+    <string name="trends_kts_kmh">Kts / Kmh</string>
+    <string name="trends_wind_direction">Wind Direction Detail</string>
+    <string name="trends_intervals">15° Intervals</string>
+    <string name="trends_data_attribution">Data provided by Open-Meteo</string>
+    <string name="trends_peak">%s Peak</string>
+
+    <!-- Home Screen UI Labels -->
+    <string name="home_select_beach">Select beach</string>
+    <string name="home_current_status">CURRENT STATUS</string>
+    <string name="home_best_for">Best For</string>
+    <string name="home_best_days_this_week">Best Days This Week</string>
+    <string name="home_best_day_for">Best for %1$s</string>
+    <string name="empty_no_best_day_data">No weekly data available yet</string>
+    <string name="home_view_chart">View Chart</string>
+    <string name="home_now">NOW</string>
+    <string name="home_live_vitals">Live Vitals</string>
+
+    <!-- Vital Labels -->
+    <string name="vital_wind">Wind</string>
+    <string name="vital_swell">Swell</string>
+    <string name="vital_avg_wave_period">Avg Wave Period</string>
+    <string name="vital_sea_temp">Sea Temp</string>
+    <string name="vital_uv_index">UV Index</string>
+
+    <!-- Forecast View Toggle -->
+    <string name="forecast_show_daily">Show daily view</string>
+    <string name="forecast_show_hourly">Show hourly view</string>
+
+    <!-- Condition Ratings -->
+    <string name="condition_epic">Epic Conditions</string>
+    <string name="condition_excellent">Excellent</string>
+    <string name="condition_good">Good Conditions</string>
+    <string name="condition_fair">Fair Conditions</string>
+    <string name="condition_poor">Poor Conditions</string>
+    <string name="condition_flat">Flat</string>
+    <string name="condition_dangerous">Dangerous</string>
+
+    <!-- Theme - System -->
+    <string name="theme_system">System</string>
+    <string name="theme_system_description">Follow system theme</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_selected">Selected</string>
+    <string name="cd_navigate_to">Navigate to %1$s</string>
+    <string name="cd_uv_index">UV Index %1$d</string>
+    <string name="cd_weather_icon">Weather conditions</string>
+    <string name="cd_location_icon">Location</string>
+    <string name="cd_expand_collapse">Expand or collapse</string>
+    <string name="cd_sport_icon">Sport: %1$s</string>
+    <string name="cd_vital_icon">%1$s indicator</string>
+    <string name="cd_wind_direction_icon">Wind direction</string>
+    <string name="cd_trend_icon">Trends</string>
+    <string name="cd_wind_direction_chart">Wind direction chart</string>
+
+    <!-- Tide -->
+    <string name="trends_tide_schedule">Tide Schedule</string>
+    <string name="trends_high_tide">High</string>
+    <string name="trends_low_tide">Low</string>
+    <string name="trends_next_tide">Next</string>
+    <string name="empty_no_tide_data">No tide data available</string>
+    <string name="cd_tide_icon">Tide indicator</string>
+
+    <!-- Empty States -->
+    <string name="empty_no_conditions_data">No conditions data available</string>
+    <string name="empty_no_forecast_data">No forecast data available</string>
+    <string name="empty_no_chart_data">No chart data available</string>
+    <string name="empty_no_vitals_data">No vitals data available</string>
+</resources>

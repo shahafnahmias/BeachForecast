@@ -1,0 +1,12 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "sea-level-server"
+resolve_s3 = true
+s3_prefix = "sea-level-server"
+region = "eu-central-1"
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+
+[default.global.parameters]
+region = "eu-central-1"

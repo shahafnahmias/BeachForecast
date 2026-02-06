@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Beach Activity Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .active-card {
+            background: rgba(13, 204, 242, 0.1);
+            border: 1px solid rgba(13, 204, 242, 0.3);
+        }
+        .activity-active {
+            @apply text-primary;
+            filter: drop-shadow(0 0 8px rgba(13, 204, 242, 0.4));
+        }
+        .activity-inactive {
+            @apply text-slate-600 opacity-40;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex items-center gap-2 group cursor-pointer">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Tel Aviv - Hilton Beach</h2>
+<span class="material-symbols-outlined text-slate-500 dark:text-primary text-[20px]">expand_more</span>
+</div>
+<div class="flex items-center gap-1.5 bg-slate-200/50 dark:bg-white/5 px-2.5 py-1 rounded-full">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<p class="text-slate-500 dark:text-[#90c1cb] text-xs font-bold leading-normal tracking-wide uppercase shrink-0">5m ago</p>
+</div>
+</div>
+</header>
+<main class="pb-24">
+<div class="px-4 py-6">
+<div class="glass-card rounded-2xl p-6 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-primary text-xs font-bold tracking-widest uppercase mb-1">Current Status</p>
+<h1 class="text-white text-2xl font-bold">Best For</h1>
+</div>
+<div class="bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+<span class="text-primary text-xs font-bold tracking-tight uppercase">Excellent Surf</span>
+</div>
+</div>
+<div class="flex justify-between items-center gap-2">
+<div class="flex flex-col items-center gap-3 flex-1">
+<div class="w-14 h-14 rounded-full glass-card flex items-center justify-center activity-active">
+<span class="material-symbols-outlined text-3xl">pool</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Swim</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1">
+<div class="w-14 h-14 rounded-full bg-primary/20 border border-primary/40 flex items-center justify-center activity-active shadow-[0_0_15px_rgba(13,204,242,0.3)]">
+<span class="material-symbols-outlined text-3xl">surfing</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Surf</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1">
+<div class="w-14 h-14 rounded-full glass-card flex items-center justify-center activity-active">
+<span class="material-symbols-outlined text-3xl">air</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Kite</span>
+</div>
+<div class="flex flex-col items-center gap-3 flex-1">
+<div class="w-14 h-14 rounded-full glass-card flex items-center justify-center activity-inactive">
+<span class="material-symbols-outlined text-3xl">kayaking</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-slate-600">SAP</span>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 flex items-center justify-between mb-2">
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Today's Conditions</h3>
+<button class="text-primary text-sm font-medium">View Chart</button>
+</div>
+<div class="flex overflow-x-auto gap-3 px-4 pb-6 no-scrollbar">
+<div class="flex flex-col gap-3 glass-card rounded-xl min-w-[140px] p-4 opacity-60">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-[#90c1cb] text-sm font-medium">09:00</p>
+<span class="material-symbols-outlined text-slate-400">cloud</span>
+</div>
+<div>
+<p class="text-slate-700 dark:text-white text-xl font-bold">40-60 cm</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 active-card rounded-xl min-w-[140px] p-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-1">
+<div class="bg-primary/20 text-primary text-[10px] font-bold px-1.5 py-0.5 rounded">NOW</div>
+</div>
+<div class="flex justify-between items-start">
+<p class="text-primary text-sm font-bold">12:00</p>
+<span class="material-symbols-outlined text-primary">partly_cloudy_day</span>
+</div>
+<div>
+<p class="text-primary text-2xl font-bold">45-70 cm</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 glass-card rounded-xl min-w-[140px] p-4">
+<div class="flex justify-between items-start">
+<p class="text-slate-500 dark:text-[#90c1cb] text-sm font-medium">15:00</p>
+<span class="material-symbols-outlined text-amber-400">sunny</span>
+</div>
+<div>
+<p class="text-slate-700 dark:text-white text-xl font-bold">50-80 cm</p>
+</div>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Live Vitals</h3>
+<div class="grid grid-cols-2 gap-3 px-4">
+<div class="flex flex-col gap-3 rounded-xl glass-card p-4">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0">air</span>
+<span class="material-symbols-outlined text-slate-500 text-sm">north_west</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">12 km/h NW</h2>
+<p class="text-slate-500 dark:text-[#90c1cb] text-xs font-medium uppercase tracking-wider">Wind</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl glass-card p-4 border-l-4 border-l-primary/40">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1">water</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">0.5m 6s</h2>
+<p class="text-slate-500 dark:text-[#90c1cb] text-xs font-medium uppercase tracking-wider">Swell</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl glass-card p-4">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0">thermostat</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">24°C</h2>
+<p class="text-slate-500 dark:text-[#90c1cb] text-xs font-medium uppercase tracking-wider">Sea Temp</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 rounded-xl glass-card p-4">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-amber-500" style="font-variation-settings: 'FILL' 1">wb_sunny</span>
+<div class="h-1 w-8 bg-amber-500 rounded-full"></div>
+</div>
+<div class="flex flex-col gap-0.5">
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight">6 High</h2>
+<p class="text-slate-500 dark:text-[#90c1cb] text-xs font-medium uppercase tracking-wider">UV Index</p>
+</div>
+</div>
+</div>
+<h3 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-8">Weekly Outlook</h3>
+<div class="px-4 space-y-3">
+<div class="flex items-center justify-between p-4 glass-card rounded-xl">
+<div class="flex items-center gap-4">
+<p class="text-slate-500 dark:text-[#90c1cb] text-sm font-bold w-10 uppercase">Mon</p>
+<span class="material-symbols-outlined text-primary">waves</span>
+<p class="text-slate-900 dark:text-white font-medium">Good Conditions</p>
+</div>
+<p class="text-slate-900 dark:text-white font-bold">50-80cm</p>
+</div>
+<div class="flex items-center justify-between p-4 glass-card rounded-xl">
+<div class="flex items-center gap-4">
+<p class="text-slate-500 dark:text-[#90c1cb] text-sm font-bold w-10 uppercase">Tue</p>
+<span class="material-symbols-outlined text-slate-500">water</span>
+<p class="text-slate-900 dark:text-white font-medium">Flat</p>
+</div>
+<p class="text-slate-900 dark:text-white font-bold">10-20cm</p>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-white/5 pb-8 pt-3 px-8">
+<div class="max-w-md mx-auto flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">map</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">notifications</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Profile</span>
+</a>
+</div>
+</nav>
+<div class="fixed inset-0 -z-10 pointer-events-none opacity-20 dark:opacity-10 overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+</div>
+
+</body></html>

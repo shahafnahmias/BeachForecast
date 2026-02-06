@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #224249;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex justify-center">
+<!-- Phone Container -->
+<div class="w-full max-w-[430px] min-h-screen flex flex-col bg-background-light dark:bg-background-dark shadow-2xl relative overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-primary flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-3xl">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Settings</h2>
+</div>
+<div class="h-[1px] bg-slate-200 dark:bg-[#224249] mx-4"></div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto custom-scrollbar pb-10">
+<!-- Location Section -->
+<div class="mt-4">
+<h3 class="text-primary text-sm uppercase font-bold tracking-widest px-4 pb-2 pt-4">Location</h3>
+<!-- Beach Selector (ListItem variant) -->
+<div class="group cursor-pointer active:bg-primary/10 transition-colors">
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between border-b border-slate-100 dark:border-[#224249]/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">waves</span>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Default Beach</p>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Hilton Beach, Tel Aviv</p>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Units Section -->
+<div class="mt-6">
+<h3 class="text-primary text-sm uppercase font-bold tracking-widest px-4 pb-2 pt-4">Units</h3>
+<!-- Toggle Item (ListItem variant) -->
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between border-b border-slate-100 dark:border-[#224249]/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">straighten</span>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Metric (Meters, Celsius)</p>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-slate-200 dark:bg-[#224249] p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white" style="box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px, rgba(0, 0, 0, 0.06) 0px 3px 1px;"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Display Preferences Section -->
+<div class="mt-6">
+<h3 class="text-primary text-sm uppercase font-bold tracking-widest px-4 pb-2 pt-4">Display Preferences</h3>
+<!-- Checkbox Item 1 -->
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between group">
+<p class="text-slate-900 dark:text-white text-base font-normal leading-normal">Wave Height &amp; Swell</p>
+<div class="shrink-0">
+<input checked="" class="w-6 h-6 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-background-dark" type="checkbox"/>
+</div>
+</div>
+<!-- Checkbox Item 2 -->
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between group">
+<p class="text-slate-900 dark:text-white text-base font-normal leading-normal">Wind Direction &amp; Speed</p>
+<div class="shrink-0">
+<input checked="" class="w-6 h-6 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-background-dark" type="checkbox"/>
+</div>
+</div>
+<!-- Checkbox Item 3 -->
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between group">
+<p class="text-slate-900 dark:text-white text-base font-normal leading-normal">Tide Predictions</p>
+<div class="shrink-0">
+<input class="w-6 h-6 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-background-dark" type="checkbox"/>
+</div>
+</div>
+<!-- Checkbox Item 4 -->
+<div class="flex items-center gap-4 px-4 min-h-14 justify-between group">
+<p class="text-slate-900 dark:text-white text-base font-normal leading-normal">Water Temperature</p>
+<div class="shrink-0">
+<input checked="" class="w-6 h-6 rounded border-slate-300 dark:border-slate-600 text-primary focus:ring-primary dark:bg-background-dark" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Appearance Section -->
+<div class="mt-6">
+<h3 class="text-primary text-sm uppercase font-bold tracking-widest px-4 pb-2 pt-4">Appearance</h3>
+<!-- Theme Picker (ListItem variant) -->
+<div class="group cursor-pointer">
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between border-b border-slate-100 dark:border-[#224249]/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">dark_mode</span>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Theme</p>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">Dark Mode</p>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Language Picker (ListItem variant) -->
+<div class="group cursor-pointer">
+<div class="flex items-center gap-4 px-4 min-h-16 justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">language</span>
+<p class="text-slate-900 dark:text-white text-base font-medium leading-normal">Language</p>
+</div>
+<div class="flex items-center gap-2">
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal">English</p>
+<span class="material-symbols-outlined text-slate-400 dark:text-slate-600">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- About Section -->
+<div class="mt-8 px-4">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-6 border border-primary/20">
+<h3 class="text-primary text-lg font-bold mb-2">SeaTrack Israel</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                        Real-time swell and sea level tracking for Israeli coasts. Built for surfers, by surfers.
+                    </p>
+<div class="flex flex-col gap-3">
+<a class="text-slate-900 dark:text-white text-sm font-medium flex items-center justify-between" href="#">
+                            Privacy Policy
+                            <span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+<div class="h-[1px] bg-slate-200 dark:bg-slate-700 w-full"></div>
+<a class="text-slate-900 dark:text-white text-sm font-medium flex items-center justify-between" href="#">
+                            Terms of Service
+                            <span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+<div class="mt-6 text-center">
+<p class="text-slate-400 dark:text-slate-600 text-xs font-medium tracking-widest">VERSION 2.4.0</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Placeholder (iOS Style) -->
+<div class="h-8 w-full flex items-center justify-center pb-2 bg-background-light dark:bg-background-dark">
+<div class="w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+</div>
+</div>
+</body></html>

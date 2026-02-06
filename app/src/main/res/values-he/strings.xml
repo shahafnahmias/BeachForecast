@@ -1,0 +1,383 @@
+<resources>
+    <!-- App Name -->
+    <string name="app_name">תחזית חוף</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">בית</string>
+    <string name="nav_forecast">תחזית</string>
+    <string name="nav_trends">מגמות</string>
+    <string name="nav_settings">הגדרות</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">תנאים היום</string>
+    <string name="home_current_label">עכשיו</string>
+    <string name="home_refresh">רענן</string>
+    <string name="home_loading">טוען נתוני מזג אוויר…</string>
+    <string name="home_error">שגיאה בטעינת נתונים</string>
+    <string name="home_retry">נסה שוב</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">הגדרות</string>
+    <string name="settings_units">יחידות</string>
+    <string name="settings_use_metric">השתמש במטרי</string>
+    <string name="settings_metric_subtitle">צלזיוס, ס״מ</string>
+    <string name="settings_imperial_subtitle">פרנהייט, רגל</string>
+    <string name="settings_display_preferences">העדפות תצוגה</string>
+    <string name="settings_important_metrics">מדדים חשובים</string>
+    <string name="settings_metrics_selected">%1$d נבחרו: %2$s</string>
+    <string name="settings_appearance">מראה</string>
+    <string name="settings_theme">ערכת נושא</string>
+    <string name="settings_widget_refresh">קצב רענון ווידג׳ט</string>
+    <string name="settings_widget_refresh_subtitle">כל 30 דקות</string>
+    <string name="settings_language">שפה</string>
+    <string name="settings_about">אודות</string>
+    <string name="settings_app_version">גרסת אפליקציה</string>
+    <string name="settings_data_source">מקור נתונים</string>
+    <string name="settings_data_source_subtitle">Open-Meteo Marine API</string>
+    <string name="settings_privacy_policy">מדיניות פרטיות</string>
+    <string name="settings_privacy_policy_subtitle">כיצד אנו מטפלים בנתונים שלך</string>
+    <string name="privacy_policy_full_text">מדיניות פרטיות\n\nעדכון אחרון: פברואר 2026\n\nBeach Forecast (\"האפליקציה\") מכבדת את פרטיותך. מדיניות זו מסבירה אילו נתונים אנו אוספים וכיצד אנו משתמשים בהם.\n\nנתונים שאנו אוספים\nהאפליקציה ניגשת למיקום המכשיר שלך (GPS) אך ורק כדי לקבוע את החוף הקרוב ולספק נתוני מזג אוויר ימי רלוונטיים.\n\nכיצד אנו משתמשים בנתונים\n• נתוני מיקום משמשים רק לשליפת תחזיות מזג אוויר לאזור החוף הקרוב.\n• ההעדפות שלך (יחידות, ערכת נושא, שפה, חוף נבחר) נשמרות באופן מקומי במכשיר שלך.\n\nאחסון נתונים\nכל הנתונים נשמרים באופן מקומי במכשיר שלך. אנו לא מעבירים מידע אישי לשום שרת. נתוני מזג אוויר נשלפים מ-Open-Meteo Marine API באמצעות הקואורדינטות שלך; לא נשלח מידע מזהה.\n\nשיתוף עם צד שלישי\nאנו לא משתפים, מוכרים או מעבירים נתונים אישיים לצדדים שלישיים.\n\nפרסום וניתוח\nהאפליקציה אינה מכילה פרסומות. אנו משתמשים ב-Firebase Crashlytics וב-Firebase Analytics לאיסוף דוחות קריסה אנונימיים וסטטיסטיקות שימוש. לא נאסף מידע מזהה אישי.\n\nפרטיות ילדים\nהאפליקציה אינה אוספת ביודעין נתונים מילדים מתחת לגיל 13.\n\nשינויים במדיניות\nאנו עשויים לעדכן מדיניות זו מעת לעת. שינויים ישתקפו באפליקציה.\n\nצור קשר\nלשאלות, פנו אלינו: beachforecast.app@gmail.com</string>
+    <string name="privacy_policy_dialog_title">מדיניות פרטיות</string>
+    <string name="privacy_policy_close">סגור</string>
+
+    <!-- Language Picker -->
+    <string name="language_picker_title">בחר שפה</string>
+    <string name="language_english">English</string>
+    <string name="language_hebrew">עברית</string>
+    <string name="language_cancel">ביטול</string>
+
+    <!-- Beach Picker -->
+    <string name="settings_location">מיקום</string>
+    <string name="settings_beach">חוף</string>
+    <string name="beach_picker_title">בחר חוף</string>
+    <string name="beach_auto">אוטומטי (הקרוב אליך)</string>
+    <string name="beach_auto_description">משתמש ב-GPS כדי למצוא את החוף הקרוב</string>
+    <string name="beach_nearest_to_you">הקרוב אליך</string>
+    <string name="beach_unknown">חוף לא ידוע</string>
+
+    <!-- Theme Picker -->
+    <string name="theme_picker_title">בחר ערכת נושא</string>
+    <string name="theme_dark">כהה</string>
+    <string name="theme_light">בהיר</string>
+    <string name="theme_dark_description">ערכת נושא כהה</string>
+    <string name="theme_light_description">ערכת נושא בהירה</string>
+    <string name="theme_cancel">ביטול</string>
+
+    <!-- Metrics Picker -->
+    <string name="metrics_picker_title">מדדים חשובים</string>
+    <string name="metrics_picker_subtitle">בחר מדדים להצגה בתחזיות ובווידג׳ט</string>
+    <string name="metrics_save">שמור</string>
+    <string name="metrics_cancel">ביטול</string>
+
+    <!-- Sports Picker -->
+    <string name="settings_sports_of_interest">ספורט מועדף</string>
+    <string name="sports_picker_title">ספורט מועדף</string>
+    <string name="sports_picker_subtitle">בחר את ענפי הספורט הימי שמעניינים אותך</string>
+    <string name="sports_save">שמור</string>
+    <string name="sports_cancel">ביטול</string>
+    <string name="settings_sports_selected">%1$d נבחרו: %2$s</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title">בחר את הספורט שלך</string>
+    <string name="onboarding_subtitle">נתאים את התחזית והווידג׳ט למה שמעניין אותך.</string>
+    <string name="onboarding_continue">המשך</string>
+    <string name="onboarding_at_least_one">בחר לפחות ספורט אחד כדי להמשיך.</string>
+    <string name="onboarding_welcome_title">ברוכים הבאים ל-Beach Forecast</string>
+    <string name="onboarding_welcome_subtitle">המלווה האישי שלך לחוף — גלים, רוח ומזג אוויר.</string>
+    <string name="onboarding_get_started">בואו נתחיל</string>
+    <string name="onboarding_select_beach">בחר את החוף שלך</string>
+    <string name="onboarding_select_beach_subtitle">בחר חוף או תן לנו למצוא את הקרוב אליך.</string>
+    <string name="onboarding_select_sports">בחר את הספורט שלך</string>
+    <string name="onboarding_next">הבא</string>
+    <string name="onboarding_back">חזרה</string>
+    <string name="onboarding_finish">סיום</string>
+    <string name="onboarding_auto_nearest">אוטומטי (הקרוב)</string>
+
+    <!-- Weather Metrics -->
+    <string name="metric_temperature">טמפרטורה</string>
+    <string name="metric_wind">רוח</string>
+    <string name="metric_cloud_cover">כיסוי עננים</string>
+    <string name="metric_uv_index">מדד UV</string>
+    <string name="metric_swell">נחשול</string>
+    <string name="metric_wave_period">תקופת גל</string>
+    <string name="metric_swell_period">תקופת נחשול</string>
+
+    <!-- Activities -->
+    <string name="activity_swim">שחייה</string>
+    <string name="activity_surf">גלישה</string>
+    <string name="activity_kite">קיטסרפינג</string>
+    <string name="activity_sap">סאפ</string>
+
+    <!-- Wave Categories -->
+    <string name="wave_flat">שטוח</string>
+    <string name="wave_ankle">קרסול</string>
+    <string name="wave_knee">ברך</string>
+    <string name="wave_waist">מותניים</string>
+    <string name="wave_chest">חזה</string>
+    <string name="wave_head_high">גובה ראש</string>
+    <string name="wave_overhead">מעל הראש</string>
+    <string name="wave_double_overhead">פי שניים מעל הראש</string>
+    <string name="wave_triple_overhead">פי שלושה מעל הראש+</string>
+
+    <!-- Widget -->
+    <string name="widget_description">מציג גובה גלים, נחשול, רוח וטמפרטורת ים עבור החוף הקרוב.</string>
+    <string name="widget_small_label">תחזית חוף — מבט מהיר</string>
+    <string name="widget_small_description">מבט מהיר: גובה גלים ודירוג תנאים.</string>
+    <string name="widget_medium_label">תחזית חוף — לוח מחוונים</string>
+    <string name="widget_medium_description">נתוני מפתח: רוח, נחשול, טמפרטורת ים והמלצות פעילות.</string>
+    <string name="widget_large_label">תחזית חוף — מלא</string>
+    <string name="widget_large_description">לוח מחוונים מלא עם סיכום, נתונים והמלצות פעילות.</string>
+    <string name="widget_loading">טוען…</string>
+    <string name="widget_loading_conditions">טוען תנאים…</string>
+    <string name="widget_error">שגיאה</string>
+    <string name="widget_today">היום</string>
+    <string name="widget_today_forecast">תחזית להיום</string>
+    <string name="widget_now">עכשיו</string>
+    <string name="widget_all_day">כל היום</string>
+    <string name="widget_current_status">מצב נוכחי</string>
+    <string name="widget_live_vitals">נתונים חיים</string>
+    <string name="widget_wind">רוח</string>
+    <string name="widget_swell">גלים</string>
+    <string name="widget_sea_temp">טמפ׳ ים</string>
+    <string name="widget_uv_index_label">מדד UV</string>
+
+    <!-- Widget Accessibility -->
+    <string name="widget_cd_cloud_icon">תנאי מזג אוויר</string>
+    <string name="widget_cd_wind_icon">מחוון רוח</string>
+    <string name="widget_cd_swell_icon">מחוון גלים</string>
+    <string name="widget_cd_sea_temp_icon">מחוון טמפרטורת ים</string>
+    <string name="widget_cd_uv_icon">מחוון מדד UV</string>
+
+    <!-- Location Permission Rationale -->
+    <string name="location_rationale_title">נדרשת גישה למיקום</string>
+    <string name="location_rationale_message">Beach Forecast משתמשת במיקום שלך כדי למצוא את החוף הקרוב ולהציג תנאי גלים, רוח ומזג אוויר רלוונטיים. המיקום שלך משמש רק באופן מקומי ולעולם אינו נשלח לשום שרת.</string>
+    <string name="location_rationale_allow">אפשר</string>
+    <string name="location_rationale_deny">לא עכשיו</string>
+
+    <!-- Location Settings Dialog (permanent denial) -->
+    <string name="location_settings_title">נדרשת הרשאת מיקום</string>
+    <string name="location_settings_message">גישה למיקום נדחתה לצמיתות. כדי להשתמש ב-Beach Forecast, אנא אפשר הרשאת מיקום בהגדרות המכשיר.</string>
+    <string name="location_settings_open">פתח הגדרות</string>
+    <string name="location_settings_cancel">ביטול</string>
+
+    <!-- Error Messages (long) -->
+    <string name="error_no_internet">אין חיבור לאינטרנט.\nבדוק את החיבור ונסה שוב.</string>
+    <string name="error_timeout">תם הזמן הקצוב לבקשה.\nבדוק את החיבור ונסה שוב.</string>
+    <string name="error_api">שירות מזג האוויר אינו זמין.\nנסה שוב בעוד כמה דקות.</string>
+    <string name="error_rate_limited">יותר מדי בקשות.\nנא להמתין כמה דקות.</string>
+    <string name="error_location_permission">נדרשת גישה למיקום.\nהענק הרשאה בהגדרות.</string>
+    <string name="error_location_unavailable">לא ניתן למצוא את המיקום שלך.\nהפעל GPS או עבור לאזור טוב יותר.</string>
+    <string name="error_location_disabled">GPS כבוי.\nהפעל שירותי מיקום.</string>
+    <string name="error_location_timeout">חיפוש המיקום לוקח יותר מדי זמן.\nנסה שוב.</string>
+    <string name="error_no_data">אין נתוני גלים לאזור זה.\nנסה מיקום חופי.</string>
+    <string name="error_invalid_coordinates">מיקום לא תקין.\nעבור לאזור תקין.</string>
+    <string name="error_data_parsing">שגיאת נתונים.\nנסה לעדכן את האפליקציה.</string>
+    <string name="error_unknown">משהו השתבש.\nנסה שוב מאוחר יותר.</string>
+
+    <!-- Error Messages (short) -->
+    <string name="error_short_no_internet">אין אינטרנט</string>
+    <string name="error_short_timeout">תם הזמן</string>
+    <string name="error_short_api">שגיאת שירות</string>
+    <string name="error_short_rate_limited">יותר מדי בקשות</string>
+    <string name="error_short_location_permission">נדרשת הרשאה</string>
+    <string name="error_short_location_unavailable">אין מיקום</string>
+    <string name="error_short_location_disabled">GPS כבוי</string>
+    <string name="error_short_location_timeout">זמן מיקום חלף</string>
+    <string name="error_short_no_data">אין נתונים</string>
+    <string name="error_short_invalid_coordinates">מיקום לא תקין</string>
+    <string name="error_short_data_parsing">שגיאת נתונים</string>
+    <string name="error_short_unknown">שגיאה</string>
+
+    <!-- Time Labels -->
+    <string name="time_now">עכשיו</string>
+    <string name="time_morning">בוקר</string>
+    <string name="time_afternoon">צהריים</string>
+    <string name="time_evening">ערב</string>
+
+    <!-- Compass Directions -->
+    <string name="direction_n">צ</string>
+    <string name="direction_ne">צ״מ</string>
+    <string name="direction_e">מ</string>
+    <string name="direction_se">ד״מ</string>
+    <string name="direction_s">ד</string>
+    <string name="direction_sw">ד״ע</string>
+    <string name="direction_w">ע</string>
+    <string name="direction_nw">צ״ע</string>
+
+    <!-- Wave Summary Templates -->
+    <string name="summary_waves_remain">הגלים נשארים %s.</string>
+    <string name="summary_waves_remain_throughout">הגלים נשארים %s לאורך כל היום.</string>
+    <string name="summary_waves_build">הגלים עולים מ%s ל%s.</string>
+    <string name="summary_waves_drop">הגלים יורדים מ%s ל%s.</string>
+    <string name="summary_waves_fluctuate">הגלים משתנים בין %s ל%s.</string>
+    <string name="summary_waves_minor_variations">הגלים נשארים %s עם שינויים קלים.</string>
+
+    <!-- Swell Descriptions -->
+    <string name="summary_minimal_swell">נחשול מינימלי.</string>
+    <string name="summary_light_swell">נחשול קל.</string>
+    <string name="summary_moderate_swell">נחשול בינוני.</string>
+    <string name="summary_good_swell">נחשול טוב.</string>
+    <string name="summary_strong_swell">נחשול חזק.</string>
+
+    <!-- Weather Conditions -->
+    <string name="summary_sunny">שמשי</string>
+    <string name="summary_mostly_sunny">בעיקר שמשי</string>
+    <string name="summary_partly_cloudy">מעונן חלקית</string>
+    <string name="summary_mostly_cloudy">בעיקר מעונן</string>
+    <string name="summary_overcast">מעונן לחלוטין</string>
+    <string name="summary_with_very_high_uv">עם UV גבוה מאוד</string>
+    <string name="summary_with_high_uv">עם UV גבוה</string>
+    <string name="summary_strong_winds">רוחות חזקות</string>
+    <string name="summary_moderate_winds">רוחות בינוניות</string>
+    <string name="summary_light_winds">רוחות קלות</string>
+    <string name="summary_hot_conditions">תנאים חמים</string>
+    <string name="summary_warm_conditions">תנאים חמימים</string>
+    <string name="summary_cold_conditions">תנאים קרים</string>
+    <string name="summary_cool_conditions">תנאים צוננים</string>
+
+    <!-- Sport Summary -->
+    <string name="summary_good_for_surfing">טוב לגלישה.</string>
+    <string name="summary_great_for_surfing">מצוין לגלישה!</string>
+    <string name="summary_not_ideal_for_surfing">לא אידיאלי לגלישה.</string>
+    <string name="summary_good_for_swimming">טוב לשחייה.</string>
+    <string name="summary_great_for_swimming">מצוין לשחייה!</string>
+    <string name="summary_not_ideal_for_swimming">לא אידיאלי לשחייה.</string>
+    <string name="summary_good_for_kiting">טוב לקיטסרפינג.</string>
+    <string name="summary_great_for_kiting">מצוין לקיטסרפינג!</string>
+    <string name="summary_not_ideal_for_kiting">לא אידיאלי לקיטסרפינג.</string>
+    <string name="summary_good_for_sup">טוב לסאפ.</string>
+    <string name="summary_great_for_sup">מצוין לסאפ!</string>
+    <string name="summary_not_ideal_for_sup">לא אידיאלי לסאפ.</string>
+
+    <!-- Period Labels -->
+    <string name="period_now">עכשיו</string>
+
+    <!-- Home Screen -->
+    <string name="home_change_beach">החלף חוף</string>
+    <string name="home_updated">עודכן %s</string>
+    <string name="home_todays_conditions">תנאים היום</string>
+    <string name="home_weather_details">פרטי מזג אוויר</string>
+    <string name="home_try_again">נסה שוב</string>
+    <string name="home_just_now">ממש עכשיו</string>
+    <string name="home_minutes_ago">לפני %d דקות</string>
+    <string name="home_hours_ago">לפני %d שעות</string>
+    <string name="home_days_ago">לפני %d ימים</string>
+
+    <!-- Weather Detail Labels -->
+    <string name="detail_wind">רוח</string>
+    <string name="detail_wave_period">תקופת גל</string>
+    <string name="detail_wave_direction">כיוון גל</string>
+    <string name="detail_swell">נחשול</string>
+    <string name="detail_sea_temp">טמפרטורת ים</string>
+    <string name="detail_uv_index">מדד UV</string>
+    <string name="uv_low">נמוך</string>
+    <string name="uv_moderate">בינוני</string>
+    <string name="uv_high">גבוה</string>
+    <string name="uv_very_high">גבוה מאוד</string>
+    <string name="uv_extreme">קיצוני</string>
+
+    <!-- Units -->
+    <string name="unit_cm">ס״מ</string>
+    <string name="unit_now_uppercase">עכשיו</string>
+
+    <!-- Forecast Screen -->
+    <string name="forecast_title">תחזית ל-7 ימים</string>
+    <string name="forecast_morning">בוקר</string>
+    <string name="forecast_afternoon">צהריים</string>
+    <string name="forecast_evening">ערב</string>
+    <string name="forecast_night">לילה</string>
+    <string name="forecast_no_hourly_data">אין נתונים לפי שעה</string>
+    <string name="forecast_cd_uv">UV %1$d</string>
+    <string name="forecast_detailed_title">תחזית שבועית מפורטת</string>
+    <string name="forecast_today">היום</string>
+    <string name="forecast_tomorrow">מחר</string>
+    <string name="forecast_data_attribution">הנתונים מסופקים על ידי Open-Meteo</string>
+    <string name="forecast_wind">רוח</string>
+    <string name="forecast_swell">נחשול</string>
+    <string name="forecast_sea_temp">טמפרטורת ים</string>
+    <string name="forecast_uv_index">מדד UV</string>
+    <string name="forecast_best_for">מתאים במיוחד ל־</string>
+    <string name="forecast_best_day_for">הכי טוב ל%1$s</string>
+
+    <!-- Trends Screen -->
+    <string name="trends_title">מגמות אוקיינוס מבוססות זמן</string>
+    <string name="trends_sea_temp">טמפרטורת ים</string>
+    <string name="trends_avg_period">תקופה ממוצעת</string>
+    <string name="trends_stable">יציב</string>
+    <string name="trends_rising">עולה</string>
+    <string name="trends_falling">יורד</string>
+    <string name="trends_swell_analysis">ניתוח נחשול 24 שעות</string>
+    <string name="trends_height_distribution">התפלגות גובה</string>
+    <string name="trends_wave_height">מגמת גובה גלים (24 שעות)</string>
+    <string name="trends_meters">מטרים (מ)</string>
+    <string name="trends_wave_period">מגמת מחזור גלים (24 שעות)</string>
+    <string name="trends_seconds_unit">שניות (ש)</string>
+    <string name="trends_wind_speed">מגמת מהירות רוח (24 שעות)</string>
+    <string name="trends_kts_kmh">קשר / קמ״ש</string>
+    <string name="trends_wind_direction">פירוט כיוון רוח</string>
+    <string name="trends_intervals">מרווחים של 15°</string>
+    <string name="trends_data_attribution">הנתונים מסופקים על ידי Open-Meteo</string>
+    <string name="trends_peak">שיא %s</string>
+
+    <!-- Home Screen UI Labels -->
+    <string name="home_select_beach">בחר חוף</string>
+    <string name="home_current_status">מצב נוכחי</string>
+    <string name="home_best_for">מתאים במיוחד ל־</string>
+    <string name="home_best_days_this_week">הימים הטובים השבוע</string>
+    <string name="home_best_day_for">הכי טוב ל%1$s</string>
+    <string name="empty_no_best_day_data">אין עדיין נתונים שבועיים</string>
+    <string name="home_view_chart">צפה בגרף</string>
+    <string name="home_now">עכשיו</string>
+    <string name="home_live_vitals">נתונים חיים</string>
+
+    <!-- Vital Labels -->
+    <string name="vital_wind">רוח</string>
+    <string name="vital_swell">נחשול</string>
+    <string name="vital_avg_wave_period">מחזור גלים ממוצע</string>
+    <string name="vital_sea_temp">טמפרטורת ים</string>
+    <string name="vital_uv_index">מדד UV</string>
+
+    <!-- Forecast View Toggle -->
+    <string name="forecast_show_daily">הצג תצוגה יומית</string>
+    <string name="forecast_show_hourly">הצג תצוגה שעתית</string>
+
+    <!-- Condition Ratings -->
+    <string name="condition_epic">תנאים אפיים</string>
+    <string name="condition_excellent">מצוין</string>
+    <string name="condition_good">תנאים טובים</string>
+    <string name="condition_fair">תנאים סבירים</string>
+    <string name="condition_poor">תנאים גרועים</string>
+    <string name="condition_flat">שטוח</string>
+    <string name="condition_dangerous">מסוכן</string>
+
+    <!-- Theme - System -->
+    <string name="theme_system">מערכת</string>
+    <string name="theme_system_description">עקוב אחר ערכת נושא המערכת</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_selected">נבחר</string>
+    <string name="cd_navigate_to">נווט אל %1$s</string>
+    <string name="cd_uv_index">מדד UV %1$d</string>
+    <string name="cd_weather_icon">תנאי מזג אוויר</string>
+    <string name="cd_location_icon">מיקום</string>
+    <string name="cd_expand_collapse">הרחב או כווץ</string>
+    <string name="cd_sport_icon">ספורט: %1$s</string>
+    <string name="cd_vital_icon">מחוון %1$s</string>
+    <string name="cd_wind_direction_icon">כיוון רוח</string>
+    <string name="cd_trend_icon">מגמות</string>
+    <string name="cd_wind_direction_chart">תרשים כיוון רוח</string>
+
+    <!-- Tide -->
+    <string name="trends_tide_schedule">לוח גאות ושפל</string>
+    <string name="trends_high_tide">גאות</string>
+    <string name="trends_low_tide">שפל</string>
+    <string name="trends_next_tide">הבא</string>
+    <string name="empty_no_tide_data">אין נתוני גאות ושפל זמינים</string>
+    <string name="cd_tide_icon">מחוון גאות ושפל</string>
+
+    <!-- Empty States -->
+    <string name="empty_no_conditions_data">אין נתוני תנאים זמינים</string>
+    <string name="empty_no_forecast_data">אין נתוני תחזית זמינים</string>
+    <string name="empty_no_chart_data">אין נתוני תרשים זמינים</string>
+    <string name="empty_no_vitals_data">אין נתוני חיוניים זמינים</string>
+</resources>
