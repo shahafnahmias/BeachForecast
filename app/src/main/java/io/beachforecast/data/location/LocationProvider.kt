@@ -157,7 +157,8 @@ class LocationProvider(
      * Check if location services are enabled
      */
     private fun isLocationEnabled(): Boolean {
-        val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as? LocationManager
+            ?: return false
         return LocationManagerCompat.isLocationEnabled(locationManager)
     }
 

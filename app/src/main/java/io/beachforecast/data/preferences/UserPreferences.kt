@@ -31,16 +31,19 @@ class UserPreferences(private val context: Context) {
         private val SELECTED_BEACH = stringPreferencesKey("selected_beach")
         private val SELECTED_SPORTS = stringPreferencesKey("selected_sports")
         private val ONBOARDING_COMPLETED = booleanPreferencesKey("onboarding_completed")
+        private val ANALYTICS_ENABLED = booleanPreferencesKey("analytics_enabled")
 
         // Defaults
         private const val DEFAULT_USE_METRIC = true
         private val DEFAULT_THEME = AppTheme.SYSTEM
         private const val DEFAULT_LANGUAGE = "en" // English
+        private const val DEFAULT_ANALYTICS_ENABLED = true
 
-        // SharedPreferences for synchronous reads (language, onboarding)
+        // SharedPreferences for synchronous reads (language, onboarding, analytics)
         private const val SYNC_PREFS_NAME = "sync_prefs"
         private const val SYNC_LANGUAGE = "sync_language"
         private const val SYNC_ONBOARDING = "sync_onboarding"
+        private const val SYNC_ANALYTICS = "sync_analytics_enabled"
     }
 
     private val syncPrefs by lazy {
@@ -239,6 +242,30 @@ class UserPreferences(private val context: Context) {
         syncPrefs.edit().putString(SYNC_LANGUAGE, languageCode).apply()
         context.dataStore.edit { preferences ->
             preferences[APP_LANGUAGE] = languageCode
+        }
+    }
+
+    /**
+     * Flow of analytics enabled preference
+     */
+    val analyticsEnabledFlow: Flow<Boolean> = context.dataStore.data.map { preferences ->
+        preferences[ANALYTICS_ENABLED] ?: DEFAULT_ANALYTICS_ENABLED
+    }
+
+    /**
+     * Get analytics enabled synchronously (for app startup)
+     */
+    fun isAnalyticsEnabledSync(): Boolean {
+        return syncPrefs.getBoolean(SYNC_ANALYTICS, DEFAULT_ANALYTICS_ENABLED)
+    }
+
+    /**
+     * Set analytics enabled preference
+     */
+    suspend fun setAnalyticsEnabled(enabled: Boolean) {
+        syncPrefs.edit().putBoolean(SYNC_ANALYTICS, enabled).apply()
+        context.dataStore.edit { preferences ->
+            preferences[ANALYTICS_ENABLED] = enabled
         }
     }
 

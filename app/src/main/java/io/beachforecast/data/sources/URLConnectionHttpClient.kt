@@ -4,6 +4,7 @@ import io.beachforecast.config.ApiConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
+import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -14,7 +15,8 @@ class URLConnectionHttpClient : HttpClient {
 
     override suspend fun get(url: String): String = withContext(Dispatchers.IO) {
         val urlObj = URL(url)
-        val connection = urlObj.openConnection() as HttpURLConnection
+        val connection = urlObj.openConnection() as? HttpURLConnection
+            ?: throw IOException("Expected HTTP/HTTPS URL but got: $url")
 
         try {
             connection.requestMethod = "GET"

@@ -34,9 +34,12 @@
     <string name="settings_app_version">App Version</string>
     <string name="settings_data_source">Data Source</string>
     <string name="settings_data_source_subtitle">Open-Meteo Marine API</string>
+    <string name="settings_analytics_title">Firebase Analytics</string>
+    <string name="settings_analytics_subtitle_on">Helping improve the app with anonymous usage data</string>
+    <string name="settings_analytics_subtitle_off">Analytics data collection disabled</string>
     <string name="settings_privacy_policy">Privacy Policy</string>
     <string name="settings_privacy_policy_subtitle">How we handle your data</string>
-    <string name="privacy_policy_full_text">Privacy Policy\n\nLast updated: February 2026\n\nBeach Forecast (\"the App\") respects your privacy. This policy explains what data we collect and how we use it.\n\nData We Collect\nThe App accesses your device\'s location (GPS) solely to determine the nearest beach and provide relevant marine weather data.\n\nHow We Use Your Data\n• Location data is used only to fetch weather forecasts for the closest coastal area.\n• Your preferences (units, theme, language, selected beach) are stored locally on your device.\n\nData Storage\nAll data is stored locally on your device. We do not transmit personal information to any server. Weather data is fetched from the Open-Meteo Marine API using your coordinates; no identifying information is sent.\n\nThird-Party Sharing\nWe do not share, sell, or transfer any personal data to third parties.\n\nAdvertising &amp; Analytics\nThe App contains no ads. We use Firebase Crashlytics and Firebase Analytics to collect anonymous crash reports and usage statistics. No personally identifiable information is collected.\n\nChildren\'s Privacy\nThe App does not knowingly collect data from children under 13.\n\nChanges to This Policy\nWe may update this policy from time to time. Changes will be reflected in the App.\n\nContact\nFor questions, contact us at: beachforecast.app@gmail.com</string>
+    <string name="privacy_policy_full_text">Privacy Policy\n\nLast updated: February 10, 2026\n\nBeach Forecast (\"the App\") respects your privacy. This policy explains what data we collect and how we use it.\n\nData We Collect\nThe App accesses your device\'s location (GPS) solely to determine the nearest beach and provide relevant marine weather data.\n\nHow We Use Your Data\n• Location data is used only to fetch weather forecasts for the closest coastal area.\n• Your preferences (units, theme, language, selected beach) are stored locally on your device.\n\nBackground Location Access\nOur home screen widgets periodically access your last known location (approximately every 15 minutes) to update weather conditions, even when the app is not open. We use your last known location (not continuous tracking) to minimize battery impact. Location data is:\n• Never stored on remote servers\n• Only used to fetch weather data for your selected beach\n• Cached locally for 24 hours to reduce GPS usage\n\nData Storage\nAll data is stored locally on your device. We do not transmit personal information to any server. Weather data is fetched from the Open-Meteo Marine API using your coordinates; no identifying information is sent.\n\nThird-Party Sharing\nWe do not share, sell, or transfer any personal data to third parties.\n\nAdvertising &amp; Analytics\nThe App contains no ads. We use Firebase Crashlytics and Firebase Analytics to collect anonymous crash reports and usage statistics. No personally identifiable information is collected. You may disable analytics collection at any time in Settings.\n\nChildren\'s Privacy\nThe App does not knowingly collect data from children under 13.\n\nHow to Delete Your Data\nAll your data is stored locally on your device:\n• To delete your preferences: Go to Android Settings > Apps > Beach Forecast > Storage > Clear Data\n• To delete location cache: Simply uninstall the app\n• We do not store any data on remote servers, so there is nothing to delete remotely\n\nChanges to This Policy\nWe may update this policy from time to time. Changes will be reflected in the App.\n\nContact\nFor questions, contact us at: shahafnahmias@gmail.com</string>
     <string name="privacy_policy_dialog_title">Privacy Policy</string>
     <string name="privacy_policy_close">Close</string>
 
@@ -121,25 +124,15 @@
 
     <!-- Widget -->
     <string name="widget_description">Shows current wave height, swell, wind, and sea temperature for the nearest beach.</string>
-    <string name="widget_small_label">Beach Forecast — Quick Glance</string>
-    <string name="widget_small_description">Quick glance: wave height and condition rating.</string>
-    <string name="widget_medium_label">Beach Forecast — Dashboard</string>
-    <string name="widget_medium_description">Key vitals: wind, swell, sea temp, and activity recommendations.</string>
-    <string name="widget_large_label">Beach Forecast — Full</string>
-    <string name="widget_large_description">Full dashboard with summary, vitals, and activity recommendations.</string>
+    <string name="widget_small_label">Beach Forecast — Go/No-Go</string>
+    <string name="widget_small_description">Instant signal: is it a good time for the beach?</string>
+    <string name="widget_medium_label">Beach Forecast — Activities</string>
+    <string name="widget_medium_description">Activity recommendations: surf, swim, kite, SUP.</string>
+    <string name="widget_large_label">Beach Forecast — Outlook</string>
+    <string name="widget_large_description">3-day forecast with conditions and key metrics.</string>
     <string name="widget_loading">Loading…</string>
-    <string name="widget_loading_conditions">Loading conditions…</string>
     <string name="widget_error">Error</string>
     <string name="widget_today">TODAY</string>
-    <string name="widget_today_forecast">TODAY\'S FORECAST</string>
-    <string name="widget_now">Now</string>
-    <string name="widget_all_day">All Day</string>
-    <string name="widget_current_status">CURRENT STATUS</string>
-    <string name="widget_live_vitals">Live Vitals</string>
-    <string name="widget_wind">WIND</string>
-    <string name="widget_swell">SWELL</string>
-    <string name="widget_sea_temp">SEA TEMP</string>
-    <string name="widget_uv_index_label">UV INDEX</string>
 
     <!-- Widget Accessibility -->
     <string name="widget_cd_cloud_icon">Weather conditions</string>
@@ -150,7 +143,7 @@
 
     <!-- Location Permission Rationale -->
     <string name="location_rationale_title">Location Access Needed</string>
-    <string name="location_rationale_message">Beach Forecast uses your location to find the nearest beach and show you relevant wave, wind, and weather conditions. Your location is only used locally and is never sent to any server.</string>
+    <string name="location_rationale_message">Beach Forecast uses your location to find the nearest beach and show you relevant wave, wind, and weather conditions.\n\nYour location is accessed:\n• When you open the app (foreground)\n• By home screen widgets for automatic updates (approximately every 15 minutes in the background)\n\nYour location is only used locally and is never sent to any server.</string>
     <string name="location_rationale_allow">Allow</string>
     <string name="location_rationale_deny">Not Now</string>
 
@@ -207,9 +200,9 @@
     <!-- Wave Summary Templates -->
     <string name="summary_waves_remain">Waves remain %s.</string>
     <string name="summary_waves_remain_throughout">Waves remain %s throughout the day.</string>
-    <string name="summary_waves_build">Waves build from %s to %s.</string>
-    <string name="summary_waves_drop">Waves drop from %s to %s.</string>
-    <string name="summary_waves_fluctuate">Waves fluctuate between %s and %s.</string>
+    <string name="summary_waves_build">Waves build from %1$s to %2$s.</string>
+    <string name="summary_waves_drop">Waves drop from %1$s to %2$s.</string>
+    <string name="summary_waves_fluctuate">Waves fluctuate between %1$s and %2$s.</string>
     <string name="summary_waves_minor_variations">Waves remain %s with minor variations.</string>
 
     <!-- Swell Descriptions -->

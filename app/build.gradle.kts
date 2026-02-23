@@ -123,6 +123,10 @@ dependencies {
     // Logging
     implementation(libs.timber)
 
+    // Glance for widget support
+    implementation(libs.androidx.glance.appwidget)
+    implementation(libs.androidx.glance.material3)
+
     testImplementation(libs.junit)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.mockito.core)

@@ -39,7 +39,7 @@
         </activity>
 
         <receiver
-            android:name=".widget.SmallWidgetProvider"
+            android:name=".widget.SmallWidgetReceiver"
             android:exported="true"
             android:label="@string/widget_small_label">
             <intent-filter>
@@ -51,7 +51,7 @@
         </receiver>
 
         <receiver
-            android:name=".widget.MediumWidgetProvider"
+            android:name=".widget.MediumWidgetReceiver"
             android:exported="true"
             android:label="@string/widget_medium_label">
             <intent-filter>
@@ -63,7 +63,7 @@
         </receiver>
 
         <receiver
-            android:name=".widget.LargeWidgetProvider"
+            android:name=".widget.LargeWidgetReceiver"
             android:exported="true"
             android:label="@string/widget_large_label">
             <intent-filter>

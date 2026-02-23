@@ -19,6 +19,7 @@ import androidx.compose.material.icons.filled.WbSunny
 import androidx.compose.material3.*
 import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -172,7 +173,7 @@ private fun HomeContent(
     // Resolve nearest beach for picker display
     val locationProvider = remember { LocationProvider(context) }
     val findClosestBeach = remember { FindClosestBeachUseCase() }
-    var nearestBeachId by remember { mutableStateOf<String?>(null) }
+    var nearestBeachId by rememberSaveable { mutableStateOf<String?>(null) }
     LaunchedEffect(allBeaches) {
         if (allBeaches.isNotEmpty()) {
             val locationResult = locationProvider.getLocation()
@@ -184,7 +185,7 @@ private fun HomeContent(
     }
     val unitSystem by userPreferences.unitSystemFlow.collectAsState(initial = UnitSystem.METRIC)
     val selectedSports by userPreferences.selectedSportsFlow.collectAsState(initial = Activity.getDefaults())
-    var showBeachDialog by remember { mutableStateOf(false) }
+    var showBeachDialog by rememberSaveable { mutableStateOf(false) }
 
     // Helper function to get localized time ago string
     fun getTimeAgoString(timestamp: Long): String {

@@ -34,9 +34,12 @@
     <string name="settings_app_version">גרסת אפליקציה</string>
     <string name="settings_data_source">מקור נתונים</string>
     <string name="settings_data_source_subtitle">Open-Meteo Marine API</string>
+    <string name="settings_analytics_title">Firebase Analytics</string>
+    <string name="settings_analytics_subtitle_on">עוזר לשפר את האפליקציה עם נתוני שימוש אנונימיים</string>
+    <string name="settings_analytics_subtitle_off">איסוף נתוני ניתוח מושבת</string>
     <string name="settings_privacy_policy">מדיניות פרטיות</string>
     <string name="settings_privacy_policy_subtitle">כיצד אנו מטפלים בנתונים שלך</string>
-    <string name="privacy_policy_full_text">מדיניות פרטיות\n\nעדכון אחרון: פברואר 2026\n\nBeach Forecast (\"האפליקציה\") מכבדת את פרטיותך. מדיניות זו מסבירה אילו נתונים אנו אוספים וכיצד אנו משתמשים בהם.\n\nנתונים שאנו אוספים\nהאפליקציה ניגשת למיקום המכשיר שלך (GPS) אך ורק כדי לקבוע את החוף הקרוב ולספק נתוני מזג אוויר ימי רלוונטיים.\n\nכיצד אנו משתמשים בנתונים\n• נתוני מיקום משמשים רק לשליפת תחזיות מזג אוויר לאזור החוף הקרוב.\n• ההעדפות שלך (יחידות, ערכת נושא, שפה, חוף נבחר) נשמרות באופן מקומי במכשיר שלך.\n\nאחסון נתונים\nכל הנתונים נשמרים באופן מקומי במכשיר שלך. אנו לא מעבירים מידע אישי לשום שרת. נתוני מזג אוויר נשלפים מ-Open-Meteo Marine API באמצעות הקואורדינטות שלך; לא נשלח מידע מזהה.\n\nשיתוף עם צד שלישי\nאנו לא משתפים, מוכרים או מעבירים נתונים אישיים לצדדים שלישיים.\n\nפרסום וניתוח\nהאפליקציה אינה מכילה פרסומות. אנו משתמשים ב-Firebase Crashlytics וב-Firebase Analytics לאיסוף דוחות קריסה אנונימיים וסטטיסטיקות שימוש. לא נאסף מידע מזהה אישי.\n\nפרטיות ילדים\nהאפליקציה אינה אוספת ביודעין נתונים מילדים מתחת לגיל 13.\n\nשינויים במדיניות\nאנו עשויים לעדכן מדיניות זו מעת לעת. שינויים ישתקפו באפליקציה.\n\nצור קשר\nלשאלות, פנו אלינו: beachforecast.app@gmail.com</string>
+    <string name="privacy_policy_full_text">מדיניות פרטיות\n\nעדכון אחרון: 10 בפברואר 2026\n\nBeach Forecast (\"האפליקציה\") מכבדת את פרטיותך. מדיניות זו מסבירה אילו נתונים אנו אוספים וכיצד אנו משתמשים בהם.\n\nנתונים שאנו אוספים\nהאפליקציה ניגשת למיקום המכשיר שלך (GPS) אך ורק כדי לקבוע את החוף הקרוב ולספק נתוני מזג אוויר ימי רלוונטיים.\n\nכיצד אנו משתמשים בנתונים\n• נתוני מיקום משמשים רק לשליפת תחזיות מזג אוויר לאזור החוף הקרוב.\n• ההעדפות שלך (יחידות, ערכת נושא, שפה, חוף נבחר) נשמרות באופן מקומי במכשיר שלך.\n\nגישה למיקום ברקע\nווידג\'טים של מסך הבית שלנו ניגשים מעת לעת למיקום האחרון הידוע שלך (בערך כל 15 דקות) כדי לעדכן את תנאי מזג האוויר, גם כאשר האפליקציה אינה פתוחה. אנו משתמשים במיקום האחרון הידוע (לא מעקב מתמשך) כדי למזער השפעה על הסוללה. נתוני המיקום:\n• לעולם אינם נשמרים בשרתים מרוחקים\n• משמשים רק לשליפת נתוני מזג אוויר לחוף שנבחר\n• נשמרים באופן מקומי למשך 24 שעות כדי להפחית שימוש ב-GPS\n\nאחסון נתונים\nכל הנתונים נשמרים באופן מקומי במכשיר שלך. אנו לא מעבירים מידע אישי לשום שרת. נתוני מזג אוויר נשלפים מ-Open-Meteo Marine API באמצעות הקואורדינטות שלך; לא נשלח מידע מזהה.\n\nשיתוף עם צד שלישי\nאנו לא משתפים, מוכרים או מעבירים נתונים אישיים לצדדים שלישיים.\n\nפרסום וניתוח\nהאפליקציה אינה מכילה פרסומות. אנו משתמשים ב-Firebase Crashlytics וב-Firebase Analytics לאיסוף דוחות קריסה אנונימיים וסטטיסטיקות שימוש. לא נאסף מידע מזהה אישי. ניתן להשבית את איסוף הנתונים בכל עת בהגדרות.\n\nפרטיות ילדים\nהאפליקציה אינה אוספת ביודעין נתונים מילדים מתחת לגיל 13.\n\nכיצד למחוק את הנתונים שלך\nכל הנתונים שלך נשמרים באופן מקומי במכשיר שלך:\n• למחיקת ההעדפות שלך: עבור להגדרות Android > אפליקציות > Beach Forecast > אחסון > נקה נתונים\n• למחיקת מטמון המיקום: פשוט הסר את האפליקציה\n• אנו לא שומרים נתונים בשרתים מרוחקים, ולכן אין מה למחוק מרחוק\n\nשינויים במדיניות\nאנו עשויים לעדכן מדיניות זו מעת לעת. שינויים ישתקפו באפליקציה.\n\nצור קשר\nלשאלות, פנו אלינו: shahafnahmias@gmail.com</string>
     <string name="privacy_policy_dialog_title">מדיניות פרטיות</string>
     <string name="privacy_policy_close">סגור</string>
 
@@ -121,25 +124,15 @@
 
     <!-- Widget -->
     <string name="widget_description">מציג גובה גלים, נחשול, רוח וטמפרטורת ים עבור החוף הקרוב.</string>
-    <string name="widget_small_label">תחזית חוף — מבט מהיר</string>
-    <string name="widget_small_description">מבט מהיר: גובה גלים ודירוג תנאים.</string>
-    <string name="widget_medium_label">תחזית חוף — לוח מחוונים</string>
-    <string name="widget_medium_description">נתוני מפתח: רוח, נחשול, טמפרטורת ים והמלצות פעילות.</string>
-    <string name="widget_large_label">תחזית חוף — מלא</string>
-    <string name="widget_large_description">לוח מחוונים מלא עם סיכום, נתונים והמלצות פעילות.</string>
+    <string name="widget_small_label">תחזית חוף — לך/לא ללכת</string>
+    <string name="widget_small_description">אות מיידי: האם זה זמן טוב לחוף?</string>
+    <string name="widget_medium_label">תחזית חוף — פעילויות</string>
+    <string name="widget_medium_description">המלצות פעילות: גלישה, שחייה, קייטסרפינג, סאפ.</string>
+    <string name="widget_large_label">תחזית חוף — תחזית</string>
+    <string name="widget_large_description">תחזית ל-3 ימים עם תנאים ומדדים מרכזיים.</string>
     <string name="widget_loading">טוען…</string>
-    <string name="widget_loading_conditions">טוען תנאים…</string>
     <string name="widget_error">שגיאה</string>
     <string name="widget_today">היום</string>
-    <string name="widget_today_forecast">תחזית להיום</string>
-    <string name="widget_now">עכשיו</string>
-    <string name="widget_all_day">כל היום</string>
-    <string name="widget_current_status">מצב נוכחי</string>
-    <string name="widget_live_vitals">נתונים חיים</string>
-    <string name="widget_wind">רוח</string>
-    <string name="widget_swell">גלים</string>
-    <string name="widget_sea_temp">טמפ׳ ים</string>
-    <string name="widget_uv_index_label">מדד UV</string>
 
     <!-- Widget Accessibility -->
     <string name="widget_cd_cloud_icon">תנאי מזג אוויר</string>
@@ -150,7 +143,7 @@
 
     <!-- Location Permission Rationale -->
     <string name="location_rationale_title">נדרשת גישה למיקום</string>
-    <string name="location_rationale_message">Beach Forecast משתמשת במיקום שלך כדי למצוא את החוף הקרוב ולהציג תנאי גלים, רוח ומזג אוויר רלוונטיים. המיקום שלך משמש רק באופן מקומי ולעולם אינו נשלח לשום שרת.</string>
+    <string name="location_rationale_message">Beach Forecast משתמשת במיקום שלך כדי למצוא את החוף הקרוב ולהציג תנאי גלים, רוח ומזג אוויר רלוונטיים.\n\nהמיקום שלך נגיש:\n• כאשר אתה פותח את האפליקציה (חזית)\n• על ידי ווידג\'טים של מסך הבית לעדכונים אוטומטיים (בערך כל 15 דקות ברקע)\n\nהמיקום שלך משמש רק באופן מקומי ולעולם אינו נשלח לשום שרת.</string>
     <string name="location_rationale_allow">אפשר</string>
     <string name="location_rationale_deny">לא עכשיו</string>
 
@@ -207,9 +200,9 @@
     <!-- Wave Summary Templates -->
     <string name="summary_waves_remain">הגלים נשארים %s.</string>
     <string name="summary_waves_remain_throughout">הגלים נשארים %s לאורך כל היום.</string>
-    <string name="summary_waves_build">הגלים עולים מ%s ל%s.</string>
-    <string name="summary_waves_drop">הגלים יורדים מ%s ל%s.</string>
-    <string name="summary_waves_fluctuate">הגלים משתנים בין %s ל%s.</string>
+    <string name="summary_waves_build">הגלים עולים מ%1$s ל%2$s.</string>
+    <string name="summary_waves_drop">הגלים יורדים מ%1$s ל%2$s.</string>
+    <string name="summary_waves_fluctuate">הגלים משתנים בין %1$s ל%2$s.</string>
     <string name="summary_waves_minor_variations">הגלים נשארים %s עם שינויים קלים.</string>
 
     <!-- Swell Descriptions -->

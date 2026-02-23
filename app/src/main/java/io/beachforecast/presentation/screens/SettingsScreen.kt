@@ -7,10 +7,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -23,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import android.content.Context
 import androidx.activity.ComponentActivity
+import com.google.firebase.analytics.FirebaseAnalytics
 import io.beachforecast.BuildConfig
 import io.beachforecast.R
 import io.beachforecast.widget.WidgetUpdateHelper
@@ -54,12 +57,13 @@ fun SettingsScreen(
     val selectedMetrics by userPreferences.selectedMetricsFlow.collectAsState(initial = WeatherMetric.getDefaults())
     val selectedSports by userPreferences.selectedSportsFlow.collectAsState(initial = Activity.getDefaults())
     val selectedLanguage by userPreferences.appLanguageFlow.collectAsState(initial = "en")
+    val analyticsEnabled by userPreferences.analyticsEnabledFlow.collectAsState(initial = true)
     val useMetric = unitSystem == UnitSystem.METRIC
-    var showThemeDialog by remember { mutableStateOf(false) }
-    var showMetricsDialog by remember { mutableStateOf(false) }
-    var showSportsDialog by remember { mutableStateOf(false) }
-    var showLanguageDialog by remember { mutableStateOf(false) }
-    var showPrivacyPolicyDialog by remember { mutableStateOf(false) }
+    var showThemeDialog by rememberSaveable { mutableStateOf(false) }
+    var showMetricsDialog by rememberSaveable { mutableStateOf(false) }
+    var showSportsDialog by rememberSaveable { mutableStateOf(false) }
+    var showLanguageDialog by rememberSaveable { mutableStateOf(false) }
+    var showPrivacyPolicyDialog by rememberSaveable { mutableStateOf(false) }
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
@@ -175,6 +179,26 @@ fun SettingsScreen(
                 subtitle = context.getString(R.string.settings_data_source_subtitle),
                 icon = Icons.Default.Info,
                 onClick = { }
+            )
+        }
+
+        item {
+            SettingsSwitch(
+                title = context.getString(R.string.settings_analytics_title),
+                subtitle = if (analyticsEnabled) {
+                    context.getString(R.string.settings_analytics_subtitle_on)
+                } else {
+                    context.getString(R.string.settings_analytics_subtitle_off)
+                },
+                icon = Icons.Default.BarChart,
+                checked = analyticsEnabled,
+                onCheckedChange = { newValue ->
+                    scope.launch {
+                        userPreferences.setAnalyticsEnabled(newValue)
+                        // Apply immediately
+                        FirebaseAnalytics.getInstance(context).setAnalyticsCollectionEnabled(newValue)
+                    }
+                }
             )
         }
 
@@ -832,7 +856,7 @@ private fun SettingsItem(
             }
 
             Icon(
-                imageVector = Icons.Default.KeyboardArrowRight,
+                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
                 contentDescription = context.getString(R.string.cd_navigate_to, title),
                 tint = MaterialTheme.colorScheme.onSurfaceVariant
             )

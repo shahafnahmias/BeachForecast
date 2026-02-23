@@ -56,6 +56,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -177,8 +178,8 @@ private fun ForecastContent(
     val userPreferences = remember { UserPreferences(context) }
     val selectedSports by userPreferences.selectedSportsFlow.collectAsState(initial = Activity.getDefaults())
     val unitSystem by userPreferences.unitSystemFlow.collectAsState(initial = UnitSystem.METRIC)
-    var showHourlyView by remember { mutableStateOf(false) }
-    var expandedDayIndex by remember { mutableStateOf(0) }
+    var showHourlyView by rememberSaveable { mutableStateOf(false) }
+    var expandedDayIndex by rememberSaveable { mutableStateOf(0) }
 
     LazyColumn(
         modifier = modifier

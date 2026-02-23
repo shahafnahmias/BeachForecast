@@ -28,8 +28,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ShowChart
-import androidx.compose.material.icons.filled.TrendingUp
+import androidx.compose.material.icons.automirrored.filled.ShowChart
+import androidx.compose.material.icons.automirrored.filled.TrendingUp
 import androidx.compose.material.icons.filled.Waves
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -40,6 +40,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -152,7 +153,7 @@ private fun TrendsContent(
     data: WeatherUiData,
     modifier: Modifier = Modifier
 ) {
-    var selectedDayIndex by remember { mutableIntStateOf(0) }
+    var selectedDayIndex by rememberSaveable { mutableIntStateOf(0) }
     val hourly = data.weekHourly.getOrElse(selectedDayIndex) { data.todayForecast.hourlyForecast }
 
     LazyColumn(
@@ -283,7 +284,7 @@ private fun TrendsHeader(title: String) {
             color = MaterialTheme.colorScheme.onBackground
         )
         Icon(
-            imageVector = Icons.Default.TrendingUp,
+            imageVector = Icons.AutoMirrored.Filled.TrendingUp,
             contentDescription = stringResource(R.string.cd_trend_icon),
             tint = MaterialTheme.colorScheme.primary,
             modifier = Modifier.size(24.dp)
@@ -762,7 +763,7 @@ private fun WindDirectionCard(entry: HourlyForecastUiData) {
                 color = contentColor
             )
             Icon(
-                imageVector = Icons.Default.ShowChart,
+                imageVector = Icons.AutoMirrored.Filled.ShowChart,
                 contentDescription = stringResource(R.string.cd_wind_direction_chart),
                 tint = contentColor,
                 modifier = Modifier

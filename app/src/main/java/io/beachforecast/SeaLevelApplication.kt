@@ -3,12 +3,10 @@ package io.beachforecast
 import android.app.Application
 import android.content.Context
 import android.content.res.Configuration
-import androidx.datastore.preferences.core.stringPreferencesKey
-import androidx.datastore.preferences.preferencesDataStore
 import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import io.beachforecast.data.preferences.UserPreferences
 import io.beachforecast.logging.CrashlyticsTree
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.runBlocking
 import timber.log.Timber
 import java.util.Locale
 
@@ -17,15 +15,18 @@ import java.util.Locale
  */
 class SeaLevelApplication : Application() {
 
-    companion object {
-        private const val DEFAULT_LANGUAGE = "en"
-        private val Context.dataStore by preferencesDataStore(name = "user_preferences")
-        private val APP_LANGUAGE = stringPreferencesKey("app_language")
-    }
-
     override fun onCreate() {
         super.onCreate()
         FirebaseApp.initializeApp(this)
+
+        // Apply analytics preference
+        val analyticsEnabled = try {
+            UserPreferences(this).isAnalyticsEnabledSync()
+        } catch (e: Exception) {
+            true // Default to enabled if preference read fails
+        }
+        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(analyticsEnabled)
+
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         } else {
@@ -34,14 +35,13 @@ class SeaLevelApplication : Application() {
     }
 
     override fun attachBaseContext(base: Context) {
-        // Read language preference directly from DataStore to avoid UserPreferences dependency
+        // Use SharedPreferences sync layer to avoid blocking on DataStore during app startup
         val languageCode = try {
-            runBlocking(kotlinx.coroutines.Dispatchers.IO) {
-                base.dataStore.data.first()[APP_LANGUAGE] ?: DEFAULT_LANGUAGE
-            }
+            val userPreferences = UserPreferences(base)
+            userPreferences.getAppLanguageSync()
         } catch (e: Exception) {
-            Timber.w(e, "Failed to read language preference, using default")
-            DEFAULT_LANGUAGE
+            // Fallback to default language if UserPreferences fails to initialize (e.g., in test environment)
+            "en"
         }
 
         val localizedContext = createConfigurationContext(base, languageCode)

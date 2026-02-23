@@ -136,6 +136,50 @@ export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" &
 export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home" && ./gradlew testDebugUnitTestCoverage
 ```
 
+### Track Issues and TODOs in This File
+
+**IMPORTANT**: Whenever you discover issues, bugs, inconsistencies, or things that still need to be done during work, document them in the "Known Issues & TODOs" section below.
+
+**Rules:**
+- Add new items as soon as they're discovered, even if you can't fix them right now
+- Mark items as **DONE** (with date) when completed — don't delete them immediately, so we have a record
+- Periodically clean up old **DONE** items to keep the list manageable
+- Include enough context so the issue is actionable in a future session
+- Prefix with priority: `[P0]` critical, `[P1]` important, `[P2]` nice-to-have
+
+## Known Issues & TODOs
+
+### Play Store Blockers (Creative/External — not code)
+- `[P0]` Export 512x512 PNG app icon for Play Console upload (adaptive icon exists in-app, just needs export)
+- `[P0]` Create 1024x500 feature graphic for Play Store listing
+- `[P0]` Capture 5-8 actual device screenshots from running app
+- `[P0]` Write short description (80 chars max) and full description (4000 chars max) for Play Store
+- `[P0]` Enable GitHub Pages on repo (Settings > Pages > main branch > /docs folder) for privacy policy URL
+
+### Play Store Warnings (Completed Feb 10, 2026)
+- **DONE** `[P0]` Privacy policy email mismatch — fixed to use shahafnahmias@gmail.com consistently
+- **DONE** `[P0]` Privacy policy missing background location disclosure — added section explaining widget location access
+- **DONE** `[P0]` Privacy policy missing data deletion instructions — added "How to Delete Your Data" section
+- **DONE** `[P0]` `SeaLevelApplication.kt:39`: ANR risk from `runBlocking` — switched to UserPreferences.getAppLanguageSync() with try-catch
+- **DONE** `[P0]` `WeatherRepository.kt:66`: force unwrap `cachedData!!` — replaced with safe `?.let`
+- **DONE** `[P1]` Wave height PNGs and UV PNGs — confirmed unused, deleted all 16 files
+- **DONE** `[P1]` `LocationProvider.kt:160`: unsafe cast — replaced with safe cast `as? LocationManager`
+- **DONE** `[P1]` `URLConnectionHttpClient.kt:17`: unsafe cast — replaced with safe cast `as? HttpURLConnection`
+- **DONE** `[P1]` Privacy policy date too vague — updated to "February 10, 2026"
+- **DONE** `[P1]` `MainActivity.kt:108`: permission re-request gating — removed `onboardingCompleted` check
+- **DONE** `[P1]` Location rationale strings — updated to mention background widget access
+- **DONE** `[P1]` `rememberSaveable` — replaced `remember` with `rememberSaveable` in HomeScreen (2), ForecastScreen (2), TrendsScreen (1), SettingsScreen (5 dialog toggles)
+
+### Play Store Warnings (Remaining)
+- **DONE (Feb 10, 2026)** `[P1]` No Firebase Analytics opt-out toggle in Settings — added toggle in About section, preference storage, app startup hook, and privacy policy mention
+
+### Backlog
+- `[P2]` No branded splash screen — consider `core-splashscreen` library
+- `[P2]` TODO comments in production: `GroupTodayByPeriodsUseCase:41` (sunset calc), `WeatherRepository:124` (coastal proximity)
+- `[P2]` `GenerateTodaySummaryUseCase` (in widget/) and `GroupTodayByPeriodsUseCase` still take Context — should be refactored
+- **DONE (Feb 10, 2026)** `[P2]` Deprecated Material icons — replaced with AutoMirrored versions (ShowChart, TrendingUp, KeyboardArrowRight)
+- **DONE (Feb 10, 2026)** `[P2]` String resource format warnings — fixed positional format in wave summary strings (%1$s, %2$s)
+
 ## Remember
 
 🧪 **No code change is complete until tests pass!**

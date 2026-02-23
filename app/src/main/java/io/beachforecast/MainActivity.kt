@@ -104,8 +104,8 @@ class MainActivity : ComponentActivity() {
             this, Manifest.permission.ACCESS_COARSE_LOCATION
         ) == PackageManager.PERMISSION_GRANTED
 
-        // Skip automatic location permission request during onboarding (onboarding handles it)
-        if (onboardingCompleted && !hasFine && !hasCoarse) {
+        // Request location permissions if not granted (onboarding handles initial request, this handles re-request after revocation)
+        if (!hasFine && !hasCoarse) {
             val shouldShowFine = ActivityCompat.shouldShowRequestPermissionRationale(
                 this, Manifest.permission.ACCESS_FINE_LOCATION
             )

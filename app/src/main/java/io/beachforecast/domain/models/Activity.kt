@@ -65,20 +65,6 @@ enum class ConditionRating(
 }
 
 /**
- * Widget color for condition rating indicator.
- * Returns ARGB int color suitable for RemoteViews text coloring.
- */
-fun ConditionRating.getWidgetColor(): Int = when (this) {
-    ConditionRating.EPIC -> 0xFF00E676.toInt()         // bright green
-    ConditionRating.EXCELLENT -> 0xFF4CAF50.toInt()     // green
-    ConditionRating.GOOD -> 0xFF66BB6A.toInt()          // lighter green
-    ConditionRating.FAIR -> 0xFFFFB300.toInt()           // amber
-    ConditionRating.POOR -> 0xFFFF9800.toInt()           // orange
-    ConditionRating.FLAT -> 0xFF78909C.toInt()           // blue-grey
-    ConditionRating.DANGEROUS -> 0xFFF44336.toInt()      // red
-}
-
-/**
  * Result of activity recommendation calculation.
  */
 @Stable

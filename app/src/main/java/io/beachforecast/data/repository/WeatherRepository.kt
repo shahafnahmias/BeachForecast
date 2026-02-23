@@ -63,7 +63,7 @@ class WeatherRepository(
                     cachedLongitude == longitude &&
                     (now - cachedTimestamp) < CACHE_VALIDITY_MS
                 ) {
-                    return WeatherResult.Success(cachedData!!)
+                    cachedData?.let { return WeatherResult.Success(it) }
                 }
 
                 // Validate coordinates
