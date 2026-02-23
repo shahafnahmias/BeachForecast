@@ -52,7 +52,7 @@ class SmallWidget : GlanceAppWidget() {
     }
 }
 
-class SmallWidgetReceiver : GlanceAppWidgetReceiver() {
+class SmallWidgetReceiver : BeachForecastWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = SmallWidget()
 }
 

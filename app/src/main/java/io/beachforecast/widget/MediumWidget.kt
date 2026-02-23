@@ -52,7 +52,7 @@ class MediumWidget : GlanceAppWidget() {
     }
 }
 
-class MediumWidgetReceiver : GlanceAppWidgetReceiver() {
+class MediumWidgetReceiver : BeachForecastWidgetReceiver() {
     override val glanceAppWidget: GlanceAppWidget = MediumWidget()
 }
 
