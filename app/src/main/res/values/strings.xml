@@ -124,15 +124,26 @@
 
     <!-- Widget -->
     <string name="widget_description">Shows current wave height, swell, wind, and sea temperature for the nearest beach.</string>
-    <string name="widget_small_label">Beach Forecast — Go/No-Go</string>
-    <string name="widget_small_description">Instant signal: is it a good time for the beach?</string>
-    <string name="widget_medium_label">Beach Forecast — Activities</string>
-    <string name="widget_medium_description">Activity recommendations: surf, swim, kite, SUP.</string>
-    <string name="widget_large_label">Beach Forecast — Outlook</string>
-    <string name="widget_large_description">3-day forecast with conditions and key metrics.</string>
+    <string name="widget_quick_glance_label">Beach Forecast — Glance</string>
+    <string name="widget_quick_glance_description">Quick look: condition rating and sport recommendations.</string>
+    <string name="widget_today_forecast_label">Beach Forecast — Today</string>
+    <string name="widget_today_forecast_description">Today\'s sport recommendations with reasons.</string>
+    <string name="widget_today_vitals_label">Beach Forecast — Vitals</string>
+    <string name="widget_today_vitals_description">Sport recommendations plus live wind, swell, sea temp, and UV.</string>
+    <string name="widget_two_day_label">Beach Forecast — 2-Day</string>
+    <string name="widget_two_day_description">Compare today and tomorrow: conditions, sports, and key metrics.</string>
+    <string name="widget_week_planner_label">Beach Forecast — Week</string>
+    <string name="widget_week_planner_description">Weekly planner: best days for each sport at a glance.</string>
     <string name="widget_loading">Loading…</string>
     <string name="widget_error">Error</string>
     <string name="widget_today">TODAY</string>
+    <string name="widget_tomorrow">TOMORROW</string>
+    <string name="widget_week_forecast">Week Forecast</string>
+    <string name="widget_best_day">Best: %1$s</string>
+    <string name="widget_vital_wind">Wind</string>
+    <string name="widget_vital_swell">Swell</string>
+    <string name="widget_vital_sea_temp">Sea Temp</string>
+    <string name="widget_vital_uv">UV</string>
 
     <!-- Widget Accessibility -->
     <string name="widget_cd_cloud_icon">Weather conditions</string>
@@ -320,7 +331,7 @@
     <string name="home_best_day_for">Best for %1$s</string>
     <string name="empty_no_best_day_data">No weekly data available yet</string>
     <string name="home_view_chart">View Chart</string>
-    <string name="home_now">NOW</string>
+
     <string name="home_live_vitals">Live Vitals</string>
 
     <!-- Vital Labels -->

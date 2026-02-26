@@ -39,39 +39,63 @@
         </activity>
 
         <receiver
-            android:name=".widget.SmallWidgetReceiver"
+            android:name=".widget.QuickGlanceWidgetReceiver"
             android:exported="true"
-            android:label="@string/widget_small_label">
+            android:label="@string/widget_quick_glance_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_small_info" />
+                android:resource="@xml/widget_quick_glance_info" />
         </receiver>
 
         <receiver
-            android:name=".widget.MediumWidgetReceiver"
+            android:name=".widget.TodayForecastWidgetReceiver"
             android:exported="true"
-            android:label="@string/widget_medium_label">
+            android:label="@string/widget_today_forecast_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_medium_info" />
+                android:resource="@xml/widget_today_forecast_info" />
         </receiver>
 
         <receiver
-            android:name=".widget.LargeWidgetReceiver"
+            android:name=".widget.TodayVitalsWidgetReceiver"
             android:exported="true"
-            android:label="@string/widget_large_label">
+            android:label="@string/widget_today_vitals_label">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_large_info" />
+                android:resource="@xml/widget_today_vitals_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.TwoDayPlannerWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_two_day_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_two_day_info" />
+        </receiver>
+
+        <receiver
+            android:name=".widget.WeekPlannerWidgetReceiver"
+            android:exported="true"
+            android:label="@string/widget_week_planner_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_week_planner_info" />
         </receiver>
     </application>
 

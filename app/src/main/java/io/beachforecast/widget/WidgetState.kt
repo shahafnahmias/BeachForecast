@@ -22,7 +22,9 @@ data class WidgetState(
 
 data class ActivityState(
     val name: String,           // Localized activity name
+    val activityKey: String,    // Activity enum name (SWIM, SURF, KITE, SUP)
     val isRecommended: Boolean,
+    val isPrimary: Boolean = false,
     val reason: String          // Localized reason text
 )
 
@@ -32,7 +34,15 @@ data class DayForecastState(
     val conditionRatingDisplay: String, // Localized display text
     val waveHeightFormatted: String,    // e.g. "40-60cm"
     val windFormatted: String,          // e.g. "12 km/h NW"
-    val temperatureFormatted: String    // e.g. "25°C"
+    val temperatureFormatted: String,   // e.g. "25°C"
+    val activities: List<ActivityState> = emptyList()
+)
+
+data class VitalState(
+    val label: String,
+    val value: String,
+    val iconType: String,        // "wind", "swell", "sea_temp", "uv"
+    val accentColor: String? = null  // Optional hex color for UV severity
 )
 
 /**
@@ -52,6 +62,10 @@ object WidgetStateSerializer {
     const val KEY_DAY_FORECASTS_JSON = "widget_day_forecasts_json"
     const val KEY_ERROR_MESSAGE = "widget_error_message"
     const val KEY_LAST_UPDATED = "widget_last_updated"
+    const val KEY_VITALS_JSON = "widget_vitals_json"
+    const val KEY_WEEK_FORECASTS_JSON = "widget_week_forecasts_json"
+    const val KEY_BEST_DAY_INDEX = "widget_best_day_index"
+    const val KEY_BEST_DAY_SUMMARY = "widget_best_day_summary"
 
     fun serializeActivities(activities: List<ActivityState>): String = gson.toJson(activities)
 
@@ -66,6 +80,14 @@ object WidgetStateSerializer {
     fun deserializeDayForecasts(json: String): List<DayForecastState> {
         if (json.isBlank()) return emptyList()
         val type = object : TypeToken<List<DayForecastState>>() {}.type
+        return gson.fromJson(json, type)
+    }
+
+    fun serializeVitals(vitals: List<VitalState>): String = gson.toJson(vitals)
+
+    fun deserializeVitals(json: String): List<VitalState> {
+        if (json.isBlank()) return emptyList()
+        val type = object : TypeToken<List<VitalState>>() {}.type
         return gson.fromJson(json, type)
     }
 }

@@ -124,15 +124,26 @@
 
     <!-- Widget -->
     <string name="widget_description">מציג גובה גלים, נחשול, רוח וטמפרטורת ים עבור החוף הקרוב.</string>
-    <string name="widget_small_label">תחזית חוף — לך/לא ללכת</string>
-    <string name="widget_small_description">אות מיידי: האם זה זמן טוב לחוף?</string>
-    <string name="widget_medium_label">תחזית חוף — פעילויות</string>
-    <string name="widget_medium_description">המלצות פעילות: גלישה, שחייה, קייטסרפינג, סאפ.</string>
-    <string name="widget_large_label">תחזית חוף — תחזית</string>
-    <string name="widget_large_description">תחזית ל-3 ימים עם תנאים ומדדים מרכזיים.</string>
+    <string name="widget_quick_glance_label">תחזית חוף — מבט</string>
+    <string name="widget_quick_glance_description">מבט מהיר: דירוג תנאים והמלצות ספורט.</string>
+    <string name="widget_today_forecast_label">תחזית חוף — היום</string>
+    <string name="widget_today_forecast_description">המלצות ספורט להיום עם סיבות.</string>
+    <string name="widget_today_vitals_label">תחזית חוף — נתונים</string>
+    <string name="widget_today_vitals_description">המלצות ספורט בתוספת רוח, גלישה, טמפרטורת ים ו-UV.</string>
+    <string name="widget_two_day_label">תחזית חוף — יומיים</string>
+    <string name="widget_two_day_description">השוואת היום ומחר: תנאים, ספורט ומדדים.</string>
+    <string name="widget_week_planner_label">תחזית חוף — שבוע</string>
+    <string name="widget_week_planner_description">תכנון שבועי: הימים הטובים לכל ספורט במבט אחד.</string>
     <string name="widget_loading">טוען…</string>
     <string name="widget_error">שגיאה</string>
     <string name="widget_today">היום</string>
+    <string name="widget_tomorrow">מחר</string>
+    <string name="widget_week_forecast">תחזית שבועית</string>
+    <string name="widget_best_day">הכי טוב: %1$s</string>
+    <string name="widget_vital_wind">רוח</string>
+    <string name="widget_vital_swell">גלים</string>
+    <string name="widget_vital_sea_temp">טמפ\' ים</string>
+    <string name="widget_vital_uv">UV</string>
 
     <!-- Widget Accessibility -->
     <string name="widget_cd_cloud_icon">תנאי מזג אוויר</string>
@@ -320,7 +331,7 @@
     <string name="home_best_day_for">הכי טוב ל%1$s</string>
     <string name="empty_no_best_day_data">אין עדיין נתונים שבועיים</string>
     <string name="home_view_chart">צפה בגרף</string>
-    <string name="home_now">עכשיו</string>
+
     <string name="home_live_vitals">נתונים חיים</string>
 
     <!-- Vital Labels -->
