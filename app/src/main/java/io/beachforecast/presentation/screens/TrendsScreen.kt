@@ -39,6 +39,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -71,16 +72,21 @@ import io.beachforecast.ui.theme.StitchAmber
 import io.beachforecast.ui.theme.StitchEmerald
 import io.beachforecast.ui.theme.StitchPrimary
 import io.beachforecast.ui.theme.StitchTheme
-import com.patrykandpatrick.vico.compose.axis.horizontal.rememberBottomAxis
-import com.patrykandpatrick.vico.compose.axis.vertical.rememberStartAxis
-import com.patrykandpatrick.vico.compose.chart.Chart
-import com.patrykandpatrick.vico.compose.chart.column.columnChart
-import com.patrykandpatrick.vico.compose.chart.line.lineChart
-import com.patrykandpatrick.vico.compose.chart.line.lineSpec
-import com.patrykandpatrick.vico.compose.component.shape.shader.fromBrush
-import com.patrykandpatrick.vico.core.component.shape.shader.DynamicShaders
-import com.patrykandpatrick.vico.core.entry.entryModelOf
-import com.patrykandpatrick.vico.core.entry.entryOf
+import com.patrykandpatrick.vico.compose.cartesian.CartesianChartHost
+import com.patrykandpatrick.vico.compose.cartesian.axis.HorizontalAxis
+import com.patrykandpatrick.vico.compose.cartesian.axis.VerticalAxis
+import com.patrykandpatrick.vico.compose.cartesian.data.CartesianChartModelProducer
+import com.patrykandpatrick.vico.compose.cartesian.data.CartesianValueFormatter
+import com.patrykandpatrick.vico.compose.cartesian.data.columnSeries
+import com.patrykandpatrick.vico.compose.cartesian.data.lineSeries
+import com.patrykandpatrick.vico.compose.cartesian.layer.ColumnCartesianLayer
+import com.patrykandpatrick.vico.compose.cartesian.layer.LineCartesianLayer
+import com.patrykandpatrick.vico.compose.cartesian.layer.rememberColumnCartesianLayer
+import com.patrykandpatrick.vico.compose.cartesian.layer.rememberLine
+import com.patrykandpatrick.vico.compose.cartesian.layer.rememberLineCartesianLayer
+import com.patrykandpatrick.vico.compose.cartesian.rememberCartesianChart
+import com.patrykandpatrick.vico.compose.common.Fill
+import com.patrykandpatrick.vico.compose.common.component.rememberLineComponent
 
 /**
  * Trends screen showing 24h ocean analytics using Vico charts.
@@ -308,290 +314,181 @@ private fun LocationSubtitle(beachName: String) {
 
 @Composable
 private fun SwellAnalysisChart(hourly: List<HourlyForecastUiData>) {
-    val colors = StitchTheme.colors
-    val entries = hourly.mapIndexed { index, h ->
-        entryOf(index.toFloat(), h.swellHeight.toFloat())
-    }
-    val model = entryModelOf(entries)
-
-    GlassCard(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        cornerRadius = 16.dp
-    ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.trends_swell_analysis).uppercase(),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = colors.textSecondary,
-                    letterSpacing = 1.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                ConditionBadge(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.trends_height_distribution),
-                    backgroundColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
-                    borderColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f),
-                    textColor = MaterialTheme.colorScheme.primary
-                )
-            }
-
-            if (entries.isNotEmpty()) {
-                Chart(
-                    chart = columnChart(),
-                    model = model,
-                    startAxis = rememberStartAxis(),
-                    bottomAxis = rememberBottomAxis(
-                        valueFormatter = { value, _ ->
-                            val index = value.toInt()
-                            if (index in hourly.indices && index % 6 == 0) {
-                                hourly[index].timeFormatted
-                            } else ""
-                        }
-                    ),
-                    modifier = Modifier.height(200.dp)
-                )
-            } else {
-                Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.empty_no_chart_data),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = colors.textSecondary
-                )
-            }
-        }
-    }
+    TrendChartCard(
+        title = stringResource(R.string.trends_swell_analysis),
+        badgeText = stringResource(R.string.trends_height_distribution),
+        accentColor = StitchPrimary,
+        hourly = hourly,
+        valueExtractor = { it.swellHeight },
+        chartType = ChartType.COLUMN
+    )
 }
 
 @Composable
 private fun WaveHeightTrendChart(hourly: List<HourlyForecastUiData>) {
-    val colors = StitchTheme.colors
-    val entries = hourly.mapIndexed { index, h ->
-        entryOf(index.toFloat(), h.waveHeight.toFloat())
-    }
-    val model = entryModelOf(entries)
-
-    GlassCard(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        cornerRadius = 16.dp
-    ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.trends_wave_height).uppercase(),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = colors.textSecondary,
-                    letterSpacing = 1.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                ConditionBadge(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.trends_meters),
-                    backgroundColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
-                    borderColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.2f),
-                    textColor = MaterialTheme.colorScheme.primary
-                )
-            }
-
-            if (entries.isNotEmpty()) {
-                Chart(
-                    chart = lineChart(
-                        lines = listOf(
-                            lineSpec(
-                                lineColor = StitchPrimary,
-                                lineBackgroundShader = DynamicShaders.fromBrush(
-                                    Brush.verticalGradient(
-                                        colors = listOf(
-                                            StitchPrimary.copy(alpha = 0.4f),
-                                            Color.Transparent
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    ),
-                    model = model,
-                    startAxis = rememberStartAxis(),
-                    bottomAxis = rememberBottomAxis(
-                        valueFormatter = { value, _ ->
-                            val index = value.toInt()
-                            if (index in hourly.indices && index % 6 == 0) {
-                                hourly[index].timeFormatted
-                            } else ""
-                        }
-                    ),
-                    modifier = Modifier.height(200.dp)
-                )
-            } else {
-                Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.empty_no_chart_data),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = colors.textSecondary
-                )
-            }
-        }
-    }
+    TrendChartCard(
+        title = stringResource(R.string.trends_wave_height),
+        badgeText = stringResource(R.string.trends_meters),
+        accentColor = StitchPrimary,
+        hourly = hourly,
+        valueExtractor = { it.waveHeight },
+        chartType = ChartType.LINE
+    )
 }
 
 @Composable
 private fun WavePeriodTrendChart(hourly: List<HourlyForecastUiData>) {
-    val colors = StitchTheme.colors
-    val entries = hourly.mapIndexed { index, h ->
-        entryOf(index.toFloat(), h.wavePeriod.toFloat())
-    }
-    val model = entryModelOf(entries)
-
-    GlassCard(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp),
-        cornerRadius = 16.dp
-    ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = stringResource(id = R.string.trends_wave_period).uppercase(),
-                    style = MaterialTheme.typography.labelSmall,
-                    color = colors.textSecondary,
-                    letterSpacing = 1.sp,
-                    fontWeight = FontWeight.Bold
-                )
-                ConditionBadge(
-                    text = stringResource(id = R.string.trends_seconds_unit),
-                    backgroundColor = StitchAmber.copy(alpha = 0.1f),
-                    borderColor = StitchAmber.copy(alpha = 0.2f),
-                    textColor = StitchAmber
-                )
-            }
-
-            if (entries.isNotEmpty()) {
-                Chart(
-                    chart = lineChart(
-                        lines = listOf(
-                            lineSpec(
-                                lineColor = StitchAmber,
-                                lineBackgroundShader = DynamicShaders.fromBrush(
-                                    Brush.verticalGradient(
-                                        colors = listOf(
-                                            StitchAmber.copy(alpha = 0.4f),
-                                            Color.Transparent
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    ),
-                    model = model,
-                    startAxis = rememberStartAxis(),
-                    bottomAxis = rememberBottomAxis(
-                        valueFormatter = { value, _ ->
-                            val index = value.toInt()
-                            if (index in hourly.indices && index % 6 == 0) {
-                                hourly[index].timeFormatted
-                            } else ""
-                        }
-                    ),
-                    modifier = Modifier.height(200.dp)
-                )
-            } else {
-                Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.empty_no_chart_data),
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = colors.textSecondary
-                )
-            }
-        }
-    }
+    TrendChartCard(
+        title = stringResource(R.string.trends_wave_period),
+        badgeText = stringResource(R.string.trends_seconds_unit),
+        accentColor = StitchAmber,
+        hourly = hourly,
+        valueExtractor = { it.wavePeriod },
+        chartType = ChartType.LINE
+    )
 }
 
 @Composable
 private fun WindSpeedTrendChart(hourly: List<HourlyForecastUiData>) {
+    TrendChartCard(
+        title = stringResource(R.string.trends_wind_speed),
+        badgeText = stringResource(R.string.trends_kts_kmh),
+        accentColor = StitchEmerald,
+        hourly = hourly,
+        valueExtractor = { it.windSpeed },
+        chartType = ChartType.LINE
+    )
+}
+
+@Composable
+private fun TrendChartCard(
+    title: String,
+    badgeText: String,
+    accentColor: Color,
+    hourly: List<HourlyForecastUiData>,
+    valueExtractor: (HourlyForecastUiData) -> Double,
+    chartType: ChartType,
+    modifier: Modifier = Modifier
+) {
     val colors = StitchTheme.colors
-    val entries = hourly.mapIndexed { index, h ->
-        entryOf(index.toFloat(), h.windSpeed.toFloat())
+    val modelProducer = remember { CartesianChartModelProducer() }
+
+    LaunchedEffect(hourly) {
+        modelProducer.runTransaction {
+            when (chartType) {
+                ChartType.LINE -> lineSeries {
+                    series(hourly.map { valueExtractor(it) })
+                }
+                ChartType.COLUMN -> columnSeries {
+                    series(hourly.map { valueExtractor(it) })
+                }
+            }
+        }
     }
-    val model = entryModelOf(entries)
 
     GlassCard(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
         cornerRadius = 16.dp
     ) {
-        Column(
-            verticalArrangement = Arrangement.spacedBy(16.dp)
-        ) {
+        Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.trends_wind_speed).uppercase(),
+                    text = title.uppercase(),
                     style = MaterialTheme.typography.labelSmall,
                     color = colors.textSecondary,
                     letterSpacing = 1.sp,
                     fontWeight = FontWeight.Bold
                 )
                 ConditionBadge(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.trends_kts_kmh),
-                    backgroundColor = StitchEmerald.copy(alpha = 0.1f),
-                    borderColor = StitchEmerald.copy(alpha = 0.2f),
-                    textColor = StitchEmerald
+                    text = badgeText,
+                    backgroundColor = accentColor.copy(alpha = 0.1f),
+                    borderColor = accentColor.copy(alpha = 0.2f),
+                    textColor = accentColor
                 )
             }
 
-            if (entries.isNotEmpty()) {
-                Chart(
-                    chart = lineChart(
-                        lines = listOf(
-                            lineSpec(
-                                lineColor = StitchEmerald,
-                                lineBackgroundShader = DynamicShaders.fromBrush(
-                                    Brush.verticalGradient(
-                                        colors = listOf(
-                                            StitchEmerald.copy(alpha = 0.4f),
-                                            Color.Transparent
+            if (hourly.isNotEmpty()) {
+                val bottomAxisValueFormatter = CartesianValueFormatter { _, value, _ ->
+                    val index = value.toInt()
+                    if (index in hourly.indices) {
+                        val rawTime = hourly[index].time
+                        if (rawTime.contains("T") && rawTime.length >= 16) {
+                            rawTime.substring(11, 13)
+                        } else {
+                            rawTime.take(2)
+                        }
+                    } else ""
+                }
+
+                when (chartType) {
+                    ChartType.LINE -> {
+                        CartesianChartHost(
+                            chart = rememberCartesianChart(
+                                rememberLineCartesianLayer(
+                                    lineProvider = LineCartesianLayer.LineProvider.series(
+                                        LineCartesianLayer.rememberLine(
+                                            fill = remember(accentColor) {
+                                                LineCartesianLayer.LineFill.single(
+                                                    Fill(accentColor)
+                                                )
+                                            },
+                                            areaFill = remember(accentColor) {
+                                                LineCartesianLayer.AreaFill.single(
+                                                    Fill(
+                                                        Brush.verticalGradient(
+                                                            listOf(
+                                                                accentColor.copy(alpha = 0.4f),
+                                                                Color.Transparent
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            }
                                         )
                                     )
+                                ),
+                                startAxis = VerticalAxis.rememberStart(),
+                                bottomAxis = HorizontalAxis.rememberBottom(
+                                    valueFormatter = bottomAxisValueFormatter,
+                                    itemPlacer = remember {
+                                        HorizontalAxis.ItemPlacer.aligned(spacing = { 6 })
+                                    }
                                 )
-                            )
+                            ),
+                            modelProducer = modelProducer,
+                            modifier = Modifier.height(200.dp)
                         )
-                    ),
-                    model = model,
-                    startAxis = rememberStartAxis(),
-                    bottomAxis = rememberBottomAxis(
-                        valueFormatter = { value, _ ->
-                            val index = value.toInt()
-                            if (index in hourly.indices && index % 6 == 0) {
-                                hourly[index].timeFormatted
-                            } else ""
-                        }
-                    ),
-                    modifier = Modifier.height(200.dp)
-                )
+                    }
+                    ChartType.COLUMN -> {
+                        CartesianChartHost(
+                            chart = rememberCartesianChart(
+                                rememberColumnCartesianLayer(
+                                    columnProvider = ColumnCartesianLayer.ColumnProvider.series(
+                                        rememberLineComponent(fill = Fill(accentColor))
+                                    )
+                                ),
+                                startAxis = VerticalAxis.rememberStart(),
+                                bottomAxis = HorizontalAxis.rememberBottom(
+                                    valueFormatter = bottomAxisValueFormatter,
+                                    itemPlacer = remember {
+                                        HorizontalAxis.ItemPlacer.aligned(spacing = { 6 })
+                                    }
+                                )
+                            ),
+                            modelProducer = modelProducer,
+                            modifier = Modifier.height(200.dp)
+                        )
+                    }
+                }
             } else {
                 Text(
-                    text = androidx.compose.ui.res.stringResource(id = R.string.empty_no_chart_data),
+                    text = stringResource(id = R.string.empty_no_chart_data),
                     style = MaterialTheme.typography.bodyMedium,
                     color = colors.textSecondary
                 )
@@ -599,6 +496,8 @@ private fun WindSpeedTrendChart(hourly: List<HourlyForecastUiData>) {
         }
     }
 }
+
+private enum class ChartType { LINE, COLUMN }
 
 @Composable
 private fun TideScheduleSection(tideEvents: List<TideEventUiData>) {

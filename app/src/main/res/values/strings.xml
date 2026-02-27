@@ -11,6 +11,7 @@
     <!-- Home Screen -->
     <string name="home_title">Today\'s Conditions</string>
     <string name="home_current_label">Current</string>
+    <string name="home_now">NOW</string>
     <string name="home_refresh">Refresh</string>
     <string name="home_loading">Loading weather data…</string>
     <string name="home_error">Error loading data</string>
