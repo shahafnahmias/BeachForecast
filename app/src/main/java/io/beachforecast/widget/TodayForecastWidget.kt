@@ -34,11 +34,9 @@ import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBadge
 import io.beachforecast.widget.components.PrimarySportHero
-import io.beachforecast.widget.components.SecondaryCompactList
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
-import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class TodayForecastWidget : GlanceAppWidget() {
@@ -94,7 +92,7 @@ private fun TodayForecastBody(
     activities: List<ActivityState>
 ) {
     if (activities.isEmpty()) return
-    val (primary, secondaries) = activities.primaryAndSecondaries()
+    val primary = activities.firstOrNull { it.isPrimary } ?: activities.first()
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp)
     ) {
@@ -114,30 +112,17 @@ private fun TodayForecastBody(
 
         Spacer(modifier = GlanceModifier.size(8.dp))
 
-        // Split row: hero card left + secondary compact list right
+        // Full-width hero card
         Row(
-            modifier = GlanceModifier.fillMaxWidth().defaultWeight()
+            modifier = GlanceModifier
+                .fillMaxWidth()
+                .defaultWeight()
+                .background(GlanceTheme.colors.surfaceVariant)
+                .cornerRadius(12.dp)
+                .padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Column(
-                modifier = GlanceModifier
-                    .defaultWeight()
-                    .background(GlanceTheme.colors.surfaceVariant)
-                    .cornerRadius(12.dp)
-                    .padding(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                PrimarySportHero(activity = primary, iconSize = 40.dp, nameFontSize = 16f, showReason = true)
-            }
-            Spacer(modifier = GlanceModifier.size(8.dp))
-            Column(
-                modifier = GlanceModifier
-                    .defaultWeight()
-                    .padding(4.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                SecondaryCompactList(activities = secondaries)
-            }
+            PrimarySportHero(activity = primary, iconSize = 44.dp, nameFontSize = 18f, showReason = true)
         }
     }
 }
