@@ -34,11 +34,9 @@ import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBadge
 import io.beachforecast.widget.components.PrimarySportHero
-import io.beachforecast.widget.components.SecondaryDotRow
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
-import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class TwoDayPlannerWidget : GlanceAppWidget() {
@@ -129,7 +127,7 @@ private fun DayColumn(
     }
 
     if (day.activities.isEmpty()) return
-    val (primary, secondaries) = day.activities.primaryAndSecondaries()
+    val primary = day.activities.firstOrNull { it.isPrimary } ?: day.activities.first()
 
     Column(
         modifier = modifier
@@ -153,13 +151,8 @@ private fun DayColumn(
 
         Spacer(modifier = GlanceModifier.size(4.dp))
 
-        // Primary sport hero
-        PrimarySportHero(activity = primary, iconSize = 32.dp, nameFontSize = 12f, showReason = true)
-
-        if (secondaries.isNotEmpty()) {
-            Spacer(modifier = GlanceModifier.size(4.dp))
-            SecondaryDotRow(activities = secondaries, dotSize = 6.dp, showNames = false)
-        }
+        // Primary sport hero — enlarged
+        PrimarySportHero(activity = primary, iconSize = 36.dp, nameFontSize = 13f, showReason = true)
 
         Spacer(modifier = GlanceModifier.defaultWeight())
 
