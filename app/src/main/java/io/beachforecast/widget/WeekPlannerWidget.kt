@@ -99,12 +99,6 @@ private fun WeekPlannerBody(
     bestDayIndex: Int,
     bestDaySummary: String
 ) {
-    // Collect unique sport keys across all days
-    val sportKeys = days
-        .flatMap { it.activities }
-        .map { it.activityKey }
-        .distinct()
-
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp)
     ) {
@@ -121,47 +115,21 @@ private fun WeekPlannerBody(
 
         Spacer(modifier = GlanceModifier.size(6.dp))
 
-        // Day name header row
-        Row(modifier = GlanceModifier.fillMaxWidth()) {
-            // Left spacer for sport icon column
-            Spacer(modifier = GlanceModifier.size(28.dp))
+        // Day columns grid
+        Row(
+            modifier = GlanceModifier.fillMaxWidth().defaultWeight()
+        ) {
             days.forEachIndexed { index, day ->
                 if (index > 0) Spacer(modifier = GlanceModifier.size(2.dp))
-                val isBest = index == bestDayIndex
-                Box(
-                    modifier = GlanceModifier
-                        .defaultWeight()
-                        .let {
-                            if (isBest) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(4.dp)
-                            else it
-                        },
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(
-                        text = day.dayName.take(3),
-                        style = TextStyle(
-                            fontSize = 9.sp,
-                            fontWeight = if (isBest) FontWeight.Bold else FontWeight.Normal,
-                            color = GlanceTheme.colors.onSurfaceVariant
-                        ),
-                        maxLines = 1
-                    )
-                }
+                DayColumn(
+                    day = day,
+                    isBestDay = index == bestDayIndex,
+                    modifier = GlanceModifier.defaultWeight()
+                )
             }
         }
 
-        Spacer(modifier = GlanceModifier.size(4.dp))
-
-        // Determine primary sport key from first day
-        val primarySportKey = days.firstOrNull()?.activities?.firstOrNull { it.isPrimary }?.activityKey
-
-        // Sport rows: one row per sport, primary row highlighted
-        sportKeys.forEach { sportKey ->
-            SportWeekRow(sportKey, days, bestDayIndex, isPrimaryRow = sportKey == primarySportKey)
-            Spacer(modifier = GlanceModifier.size(2.dp))
-        }
-
-        Spacer(modifier = GlanceModifier.defaultWeight())
+        Spacer(modifier = GlanceModifier.size(6.dp))
 
         // Best day footer
         if (bestDaySummary.isNotEmpty()) {
@@ -187,56 +155,63 @@ private fun WeekPlannerBody(
 }
 
 @Composable
-private fun SportWeekRow(
-    sportKey: String,
-    days: List<DayForecastState>,
-    bestDayIndex: Int,
-    isPrimaryRow: Boolean = false
+private fun DayColumn(
+    day: DayForecastState,
+    isBestDay: Boolean,
+    modifier: GlanceModifier
 ) {
-    val iconSize = if (isPrimaryRow) 24.dp else 20.dp
-    val dotSize = if (isPrimaryRow) 12.dp else 10.dp
+    val primary = day.activities.firstOrNull { it.isPrimary } ?: day.activities.firstOrNull()
+    val conditionColor = ConditionColors.forRating(day.conditionRating)
+    val tintColor = if (primary?.isRecommended == true) RecommendedColor else NotRecommendedColor
 
-    Row(
-        modifier = GlanceModifier
-            .fillMaxWidth()
+    Column(
+        modifier = modifier
             .let {
-                if (isPrimaryRow) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(6.dp)
+                if (isBestDay) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(6.dp)
                 else it
-            },
-        verticalAlignment = Alignment.CenterVertically
+            }
+            .padding(vertical = 4.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        // Sport icon on the left
-        Image(
-            provider = ImageProvider(sportIconRes(sportKey)),
-            contentDescription = sportKey,
-            modifier = GlanceModifier.size(iconSize),
-            colorFilter = ColorFilter.tint(GlanceTheme.colors.onSurfaceVariant)
+        // Day name
+        Text(
+            text = day.dayName.take(3),
+            style = TextStyle(
+                fontSize = 9.sp,
+                fontWeight = if (isBestDay) FontWeight.Bold else FontWeight.Normal,
+                color = GlanceTheme.colors.onSurfaceVariant
+            ),
+            maxLines = 1
         )
-        Spacer(modifier = GlanceModifier.size(8.dp))
 
-        // Dots for each day
-        days.forEachIndexed { index, day ->
-            if (index > 0) Spacer(modifier = GlanceModifier.size(2.dp))
-            val isRecommended = day.activities.find { it.activityKey == sportKey }?.isRecommended ?: false
-            val dotColor = if (isRecommended) RecommendedColor else NotRecommendedColor
-            val isBest = index == bestDayIndex
+        Spacer(modifier = GlanceModifier.size(4.dp))
 
+        // Primary sport icon in tinted circle
+        if (primary != null) {
             Box(
                 modifier = GlanceModifier
-                    .defaultWeight()
-                    .let {
-                        if (isBest && !isPrimaryRow) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(4.dp)
-                        else it
-                    },
+                    .size(36.dp)
+                    .background(ColorProvider(tintColor.copy(alpha = 0.15f)))
+                    .cornerRadius(100.dp),
                 contentAlignment = Alignment.Center
             ) {
-                Box(
-                    modifier = GlanceModifier
-                        .size(dotSize)
-                        .background(ColorProvider(dotColor))
-                        .cornerRadius(100.dp)
-                ) {}
+                Image(
+                    provider = ImageProvider(sportIconRes(primary.activityKey)),
+                    contentDescription = primary.name,
+                    modifier = GlanceModifier.size(24.dp),
+                    colorFilter = ColorFilter.tint(ColorProvider(tintColor))
+                )
             }
         }
+
+        Spacer(modifier = GlanceModifier.size(4.dp))
+
+        // Condition color dot
+        Box(
+            modifier = GlanceModifier
+                .size(10.dp)
+                .background(ColorProvider(conditionColor))
+                .cornerRadius(100.dp)
+        ) {}
     }
 }
