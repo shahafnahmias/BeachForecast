@@ -32,11 +32,9 @@ import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBar
 import io.beachforecast.widget.components.ConditionBadge
 import io.beachforecast.widget.components.PrimarySportHero
-import io.beachforecast.widget.components.SecondaryDotRow
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
-import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class QuickGlanceWidget : GlanceAppWidget() {
@@ -93,7 +91,7 @@ private fun QuickGlanceBody(
     activities: List<ActivityState>
 ) {
     if (activities.isEmpty()) return
-    val (primary, secondaries) = activities.primaryAndSecondaries()
+    val primary = activities.firstOrNull { it.isPrimary } ?: activities.first()
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -113,18 +111,13 @@ private fun QuickGlanceBody(
 
         Spacer(modifier = GlanceModifier.defaultWeight())
 
-        // Primary sport hero
-        PrimarySportHero(activity = primary, iconSize = 48.dp, nameFontSize = 13f, showReason = false)
+        // Primary sport hero — enlarged
+        PrimarySportHero(activity = primary, iconSize = 52.dp, nameFontSize = 14f, showReason = true)
 
         Spacer(modifier = GlanceModifier.size(6.dp))
 
         // Condition badge
         ConditionBadge(conditionRating, conditionDisplay, fontSize = 13f)
-
-        if (secondaries.isNotEmpty()) {
-            Spacer(modifier = GlanceModifier.size(4.dp))
-            SecondaryDotRow(activities = secondaries, dotSize = 8.dp, showNames = false)
-        }
 
         Spacer(modifier = GlanceModifier.defaultWeight())
 
