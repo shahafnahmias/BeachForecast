@@ -30,3 +30,6 @@ sea-level-server/.aws-sam/
 
 # Kotlin compiler logs
 .kotlin/errors/
+
+# Git worktrees
+.worktrees/
