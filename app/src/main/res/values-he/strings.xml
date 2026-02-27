@@ -11,6 +11,7 @@
     <!-- Home Screen -->
     <string name="home_title">תנאים היום</string>
     <string name="home_current_label">עכשיו</string>
+    <string name="home_now">עכשיו</string>
     <string name="home_refresh">רענן</string>
     <string name="home_loading">טוען נתוני מזג אוויר…</string>
     <string name="home_error">שגיאה בטעינת נתונים</string>
