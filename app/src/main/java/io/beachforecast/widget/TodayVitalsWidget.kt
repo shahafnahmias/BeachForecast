@@ -34,12 +34,10 @@ import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBadge
 import io.beachforecast.widget.components.PrimarySportHero
-import io.beachforecast.widget.components.SecondaryDotRow
 import io.beachforecast.widget.components.VitalsGrid
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
-import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class TodayVitalsWidget : GlanceAppWidget() {
@@ -98,7 +96,7 @@ private fun TodayVitalsBody(
     vitals: List<VitalState>
 ) {
     if (activities.isEmpty()) return
-    val (primary, secondaries) = activities.primaryAndSecondaries()
+    val primary = activities.firstOrNull { it.isPrimary } ?: activities.first()
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp)
     ) {
@@ -118,7 +116,7 @@ private fun TodayVitalsBody(
 
         Spacer(modifier = GlanceModifier.size(6.dp))
 
-        // Full-width hero card row: primary left + secondary dots right
+        // Full-width hero card — primary sport centered
         Row(
             modifier = GlanceModifier
                 .fillMaxWidth()
@@ -127,16 +125,12 @@ private fun TodayVitalsBody(
                 .padding(8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            PrimarySportHero(activity = primary, iconSize = 36.dp, nameFontSize = 14f, showReason = false)
-            Spacer(modifier = GlanceModifier.defaultWeight())
-            if (secondaries.isNotEmpty()) {
-                SecondaryDotRow(activities = secondaries, dotSize = 8.dp, showNames = true)
-            }
+            PrimarySportHero(activity = primary, iconSize = 40.dp, nameFontSize = 16f, showReason = true)
         }
 
         Spacer(modifier = GlanceModifier.size(6.dp))
 
-        // Vitals 2x2 grid
+        // Vitals 2x2 grid (unchanged)
         VitalsGrid(vitals)
     }
 }
