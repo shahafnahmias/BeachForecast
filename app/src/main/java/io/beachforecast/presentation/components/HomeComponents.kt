@@ -289,53 +289,34 @@ private fun HourlyConditionCard(
             modifier = Modifier.width(140.dp),
             cornerRadius = 12.dp
         ) {
-            Box(modifier = Modifier.padding(16.dp)) {
-                // NOW badge
-                Box(
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .clip(RoundedCornerShape(4.dp))
-                        .background(primaryColor.copy(alpha = 0.2f))
-                        .padding(horizontal = 6.dp, vertical = 2.dp)
+            Column(modifier = Modifier.padding(16.dp)) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.Top
                 ) {
                     Text(
-                        text = stringResource(R.string.home_now),
-                        style = MaterialTheme.typography.labelSmall,
-                        color = primaryColor,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 10.sp
-                    )
-                }
-
-                Column {
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.Top
-                    ) {
-                        Text(
-                            text = data.time,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = primaryColor,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Icon(
-                            imageVector = data.weatherIcon,
-                            contentDescription = stringResource(R.string.cd_weather_icon),
-                            tint = primaryColor,
-                            modifier = Modifier.size(20.dp)
-                        )
-                    }
-
-                    Spacer(modifier = Modifier.height(12.dp))
-
-                    Text(
-                        text = data.waveHeightRange,
-                        style = MaterialTheme.typography.titleLarge,
+                        text = data.time,
+                        style = MaterialTheme.typography.bodyMedium,
                         color = primaryColor,
                         fontWeight = FontWeight.Bold
                     )
+                    Icon(
+                        imageVector = data.weatherIcon,
+                        contentDescription = stringResource(R.string.cd_weather_icon),
+                        tint = primaryColor,
+                        modifier = Modifier.size(20.dp)
+                    )
                 }
+
+                Spacer(modifier = Modifier.height(12.dp))
+
+                Text(
+                    text = data.waveHeightRange,
+                    style = MaterialTheme.typography.titleLarge,
+                    color = primaryColor,
+                    fontWeight = FontWeight.Bold
+                )
             }
         }
     } else {

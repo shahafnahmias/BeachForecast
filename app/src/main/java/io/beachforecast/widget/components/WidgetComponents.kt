@@ -3,6 +3,7 @@ package io.beachforecast.widget.components
 import android.content.Intent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.glance.ColorFilter
@@ -38,6 +39,142 @@ import io.beachforecast.widget.theme.ConditionColors
 
 private val RecommendedColor = Color(0xFF4CAF50)
 private val NotRecommendedColor = Color(0xFF78909C)
+
+/**
+ * Returns the primary activity (isPrimary=true, or first if none) and all secondaries.
+ */
+fun List<ActivityState>.primaryAndSecondaries(): Pair<ActivityState, List<ActivityState>> {
+    val primary = firstOrNull { it.isPrimary } ?: first()
+    val secondaries = filter { it.activityKey != primary.activityKey }
+    return primary to secondaries
+}
+
+/**
+ * Large icon in a tinted circle, sport name, and optional reason.
+ */
+@Composable
+fun PrimarySportHero(
+    activity: ActivityState,
+    iconSize: Dp,
+    nameFontSize: Float,
+    showReason: Boolean
+) {
+    val tintColor = if (activity.isRecommended) RecommendedColor else NotRecommendedColor
+    val circleSize = iconSize + 24.dp
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Box(
+            modifier = GlanceModifier
+                .size(circleSize)
+                .background(ColorProvider(tintColor.copy(alpha = 0.15f)))
+                .cornerRadius(100.dp),
+            contentAlignment = Alignment.Center
+        ) {
+            Image(
+                provider = ImageProvider(sportIconRes(activity.activityKey)),
+                contentDescription = activity.name,
+                modifier = GlanceModifier.size(iconSize),
+                colorFilter = ColorFilter.tint(ColorProvider(tintColor))
+            )
+        }
+        Spacer(modifier = GlanceModifier.size(4.dp))
+        Text(
+            text = activity.name,
+            style = TextStyle(
+                fontSize = nameFontSize.sp,
+                fontWeight = FontWeight.Bold,
+                color = GlanceTheme.colors.onSurface
+            ),
+            maxLines = 1
+        )
+        if (showReason && activity.reason.isNotEmpty()) {
+            Spacer(modifier = GlanceModifier.size(2.dp))
+            Text(
+                text = activity.reason,
+                style = TextStyle(
+                    fontSize = (nameFontSize - 2f).sp,
+                    color = GlanceTheme.colors.onSurfaceVariant
+                ),
+                maxLines = 1
+            )
+        }
+    }
+}
+
+/**
+ * Row of colored dots for secondary sports. Green=recommended, gray=not.
+ */
+@Composable
+fun SecondaryDotRow(
+    activities: List<ActivityState>,
+    dotSize: Dp,
+    showNames: Boolean
+) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        activities.forEachIndexed { index, activity ->
+            if (index > 0) Spacer(modifier = GlanceModifier.size(4.dp))
+            val dotColor = if (activity.isRecommended) RecommendedColor else NotRecommendedColor
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Box(
+                    modifier = GlanceModifier
+                        .size(dotSize)
+                        .background(ColorProvider(dotColor))
+                        .cornerRadius(100.dp)
+                ) {}
+                if (showNames) {
+                    Spacer(modifier = GlanceModifier.size(2.dp))
+                    Text(
+                        text = activity.name,
+                        style = TextStyle(
+                            fontSize = 8.sp,
+                            color = GlanceTheme.colors.onSurfaceVariant
+                        ),
+                        maxLines = 1
+                    )
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Vertical list of secondary sports with icon + name + status dot.
+ * Used in the TodayForecast right panel.
+ */
+@Composable
+fun SecondaryCompactList(activities: List<ActivityState>) {
+    Column {
+        activities.forEachIndexed { index, activity ->
+            if (index > 0) Spacer(modifier = GlanceModifier.size(4.dp))
+            val tintColor = if (activity.isRecommended) RecommendedColor else NotRecommendedColor
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Image(
+                    provider = ImageProvider(sportIconRes(activity.activityKey)),
+                    contentDescription = activity.name,
+                    modifier = GlanceModifier.size(14.dp),
+                    colorFilter = ColorFilter.tint(ColorProvider(tintColor))
+                )
+                Spacer(modifier = GlanceModifier.size(4.dp))
+                Text(
+                    text = activity.name,
+                    style = TextStyle(
+                        fontSize = 11.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = GlanceTheme.colors.onSurface
+                    ),
+                    maxLines = 1,
+                    modifier = GlanceModifier.defaultWeight()
+                )
+                Spacer(modifier = GlanceModifier.size(4.dp))
+                Box(
+                    modifier = GlanceModifier
+                        .size(6.dp)
+                        .background(ColorProvider(tintColor))
+                        .cornerRadius(100.dp)
+                ) {}
+            }
+        }
+    }
+}
 
 /**
  * Standard widget header: app icon + city name + right-side content.
@@ -96,6 +233,7 @@ fun ConditionBadge(
  * Row of sport icons showing recommendation status.
  * Used in Quick Glance (icons only) and Today's Forecast (cards with reasons).
  */
+@Deprecated("Use PrimarySportHero + SecondaryDotRow instead")
 @Composable
 fun SportIconRow(
     activities: List<ActivityState>,
@@ -126,6 +264,7 @@ fun SportIconRow(
 /**
  * Compact sport icon with name — for Quick Glance and Two-Day widgets.
  */
+@Deprecated("Use PrimarySportHero or SecondaryCompactList instead")
 @Composable
 fun SportIconCompact(
     activity: ActivityState,
@@ -168,6 +307,7 @@ fun SportIconCompact(
 /**
  * Sport card with icon, name, and reason — for Today's Forecast and Today+Vitals.
  */
+@Deprecated("Use PrimarySportHero instead")
 @Composable
 fun SportCard(
     activity: ActivityState,

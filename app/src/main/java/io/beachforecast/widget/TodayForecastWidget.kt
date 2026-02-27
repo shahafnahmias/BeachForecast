@@ -18,11 +18,14 @@ import androidx.glance.appwidget.action.actionStartActivity
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
 import androidx.glance.currentState
+import androidx.glance.appwidget.cornerRadius
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.Column
+import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
 import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.text.FontWeight
@@ -30,10 +33,12 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBadge
-import io.beachforecast.widget.components.SportIconRow
+import io.beachforecast.widget.components.PrimarySportHero
+import io.beachforecast.widget.components.SecondaryCompactList
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
+import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class TodayForecastWidget : GlanceAppWidget() {
@@ -88,6 +93,8 @@ private fun TodayForecastBody(
     conditionDisplay: String,
     activities: List<ActivityState>
 ) {
+    if (activities.isEmpty()) return
+    val (primary, secondaries) = activities.primaryAndSecondaries()
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp)
     ) {
@@ -107,13 +114,29 @@ private fun TodayForecastBody(
 
         Spacer(modifier = GlanceModifier.size(8.dp))
 
-        // Sport cards with reasons
-        when {
-            activities.size <= 3 -> SportIconRow(activities = activities, showReasons = true)
-            else -> {
-                SportIconRow(activities = activities.take(2), showReasons = true)
-                Spacer(modifier = GlanceModifier.size(4.dp))
-                SportIconRow(activities = activities.drop(2).take(2), showReasons = true)
+        // Split row: hero card left + secondary compact list right
+        Row(
+            modifier = GlanceModifier.fillMaxWidth().defaultWeight()
+        ) {
+            Column(
+                modifier = GlanceModifier
+                    .defaultWeight()
+                    .background(GlanceTheme.colors.surfaceVariant)
+                    .cornerRadius(12.dp)
+                    .padding(8.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                PrimarySportHero(activity = primary, iconSize = 40.dp, nameFontSize = 16f, showReason = true)
+            }
+            Spacer(modifier = GlanceModifier.size(8.dp))
+            Column(
+                modifier = GlanceModifier
+                    .defaultWeight()
+                    .padding(4.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                SecondaryCompactList(activities = secondaries)
             }
         }
     }

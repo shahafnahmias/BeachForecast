@@ -18,11 +18,14 @@ import androidx.glance.appwidget.action.actionStartActivity
 import androidx.glance.appwidget.provideContent
 import androidx.glance.background
 import androidx.glance.currentState
+import androidx.glance.appwidget.cornerRadius
 import androidx.glance.layout.Alignment
 import androidx.glance.layout.Box
 import androidx.glance.layout.Column
+import androidx.glance.layout.Row
 import androidx.glance.layout.Spacer
 import androidx.glance.layout.fillMaxSize
+import androidx.glance.layout.fillMaxWidth
 import androidx.glance.layout.padding
 import androidx.glance.layout.size
 import androidx.glance.text.FontWeight
@@ -30,11 +33,13 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBadge
-import io.beachforecast.widget.components.SportIconRow
+import io.beachforecast.widget.components.PrimarySportHero
+import io.beachforecast.widget.components.SecondaryDotRow
 import io.beachforecast.widget.components.VitalsGrid
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
+import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class TodayVitalsWidget : GlanceAppWidget() {
@@ -92,6 +97,8 @@ private fun TodayVitalsBody(
     activities: List<ActivityState>,
     vitals: List<VitalState>
 ) {
+    if (activities.isEmpty()) return
+    val (primary, secondaries) = activities.primaryAndSecondaries()
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp)
     ) {
@@ -111,8 +118,21 @@ private fun TodayVitalsBody(
 
         Spacer(modifier = GlanceModifier.size(6.dp))
 
-        // Sport cards (compact row to save space)
-        SportIconRow(activities = activities, showReasons = true)
+        // Full-width hero card row: primary left + secondary dots right
+        Row(
+            modifier = GlanceModifier
+                .fillMaxWidth()
+                .background(GlanceTheme.colors.surfaceVariant)
+                .cornerRadius(12.dp)
+                .padding(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            PrimarySportHero(activity = primary, iconSize = 36.dp, nameFontSize = 14f, showReason = false)
+            Spacer(modifier = GlanceModifier.defaultWeight())
+            if (secondaries.isNotEmpty()) {
+                SecondaryDotRow(activities = secondaries, dotSize = 8.dp, showNames = true)
+            }
+        }
 
         Spacer(modifier = GlanceModifier.size(6.dp))
 

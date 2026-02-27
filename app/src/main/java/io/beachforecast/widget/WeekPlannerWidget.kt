@@ -152,9 +152,12 @@ private fun WeekPlannerBody(
 
         Spacer(modifier = GlanceModifier.size(4.dp))
 
-        // Sport rows: one row per sport
+        // Determine primary sport key from first day
+        val primarySportKey = days.firstOrNull()?.activities?.firstOrNull { it.isPrimary }?.activityKey
+
+        // Sport rows: one row per sport, primary row highlighted
         sportKeys.forEach { sportKey ->
-            SportWeekRow(sportKey, days, bestDayIndex)
+            SportWeekRow(sportKey, days, bestDayIndex, isPrimaryRow = sportKey == primarySportKey)
             Spacer(modifier = GlanceModifier.size(2.dp))
         }
 
@@ -187,17 +190,26 @@ private fun WeekPlannerBody(
 private fun SportWeekRow(
     sportKey: String,
     days: List<DayForecastState>,
-    bestDayIndex: Int
+    bestDayIndex: Int,
+    isPrimaryRow: Boolean = false
 ) {
+    val iconSize = if (isPrimaryRow) 24.dp else 20.dp
+    val dotSize = if (isPrimaryRow) 12.dp else 10.dp
+
     Row(
-        modifier = GlanceModifier.fillMaxWidth(),
+        modifier = GlanceModifier
+            .fillMaxWidth()
+            .let {
+                if (isPrimaryRow) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(6.dp)
+                else it
+            },
         verticalAlignment = Alignment.CenterVertically
     ) {
         // Sport icon on the left
         Image(
             provider = ImageProvider(sportIconRes(sportKey)),
             contentDescription = sportKey,
-            modifier = GlanceModifier.size(20.dp),
+            modifier = GlanceModifier.size(iconSize),
             colorFilter = ColorFilter.tint(GlanceTheme.colors.onSurfaceVariant)
         )
         Spacer(modifier = GlanceModifier.size(8.dp))
@@ -213,16 +225,16 @@ private fun SportWeekRow(
                 modifier = GlanceModifier
                     .defaultWeight()
                     .let {
-                        if (isBest) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(4.dp)
+                        if (isBest && !isPrimaryRow) it.background(GlanceTheme.colors.surfaceVariant).cornerRadius(4.dp)
                         else it
                     },
                 contentAlignment = Alignment.Center
             ) {
                 Box(
                     modifier = GlanceModifier
-                        .size(10.dp)
+                        .size(dotSize)
                         .background(ColorProvider(dotColor))
-                        .cornerRadius(5.dp)
+                        .cornerRadius(100.dp)
                 ) {}
             }
         }

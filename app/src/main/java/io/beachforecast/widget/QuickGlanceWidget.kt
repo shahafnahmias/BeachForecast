@@ -31,10 +31,12 @@ import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBar
 import io.beachforecast.widget.components.ConditionBadge
-import io.beachforecast.widget.components.SportIconRow
+import io.beachforecast.widget.components.PrimarySportHero
+import io.beachforecast.widget.components.SecondaryDotRow
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
+import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class QuickGlanceWidget : GlanceAppWidget() {
@@ -90,6 +92,8 @@ private fun QuickGlanceBody(
     conditionDisplay: String,
     activities: List<ActivityState>
 ) {
+    if (activities.isEmpty()) return
+    val (primary, secondaries) = activities.primaryAndSecondaries()
     Column(
         modifier = GlanceModifier.fillMaxSize().padding(12.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -109,14 +113,22 @@ private fun QuickGlanceBody(
 
         Spacer(modifier = GlanceModifier.defaultWeight())
 
-        // Sport icons row (compact, no reasons)
-        SportIconRow(activities = activities, showReasons = false)
+        // Primary sport hero
+        PrimarySportHero(activity = primary, iconSize = 48.dp, nameFontSize = 13f, showReason = false)
+
+        Spacer(modifier = GlanceModifier.size(6.dp))
+
+        // Condition badge
+        ConditionBadge(conditionRating, conditionDisplay, fontSize = 13f)
+
+        if (secondaries.isNotEmpty()) {
+            Spacer(modifier = GlanceModifier.size(4.dp))
+            SecondaryDotRow(activities = secondaries, dotSize = 8.dp, showNames = false)
+        }
 
         Spacer(modifier = GlanceModifier.defaultWeight())
 
         // Condition bar at bottom
-        ConditionBadge(conditionRating, conditionDisplay, fontSize = 14f)
-        Spacer(modifier = GlanceModifier.size(4.dp))
         ConditionBar(conditionRating)
     }
 }

@@ -33,10 +33,12 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextStyle
 import io.beachforecast.MainActivity
 import io.beachforecast.widget.components.ConditionBadge
-import io.beachforecast.widget.components.SportIconRow
+import io.beachforecast.widget.components.PrimarySportHero
+import io.beachforecast.widget.components.SecondaryDotRow
 import io.beachforecast.widget.components.WidgetErrorContent
 import io.beachforecast.widget.components.WidgetHeader
 import io.beachforecast.widget.components.WidgetLoadingContent
+import io.beachforecast.widget.components.primaryAndSecondaries
 import io.beachforecast.widget.theme.BeachForecastWidgetTheme
 
 class TwoDayPlannerWidget : GlanceAppWidget() {
@@ -126,51 +128,42 @@ private fun DayColumn(
         GlanceTheme.colors.widgetBackground
     }
 
+    if (day.activities.isEmpty()) return
+    val (primary, secondaries) = day.activities.primaryAndSecondaries()
+
     Column(
         modifier = modifier
             .background(background)
             .cornerRadius(12.dp)
             .padding(8.dp)
     ) {
-        // Day name
-        Text(
-            text = day.dayName,
-            style = TextStyle(
-                fontSize = 11.sp,
-                fontWeight = FontWeight.Bold,
-                color = GlanceTheme.colors.onSurfaceVariant
-            )
-        )
-
-        Spacer(modifier = GlanceModifier.size(4.dp))
-
-        // Condition badge + temperature
+        // Day name + condition badge
         Row(verticalAlignment = Alignment.CenterVertically) {
-            ConditionBadge(day.conditionRating, day.conditionRatingDisplay, fontSize = 11f)
-            Spacer(modifier = GlanceModifier.size(4.dp))
             Text(
-                text = day.temperatureFormatted,
+                text = day.dayName,
                 style = TextStyle(
                     fontSize = 11.sp,
                     fontWeight = FontWeight.Bold,
-                    color = GlanceTheme.colors.onSurface
+                    color = GlanceTheme.colors.onSurfaceVariant
                 )
             )
+            Spacer(modifier = GlanceModifier.size(4.dp))
+            ConditionBadge(day.conditionRating, day.conditionRatingDisplay, fontSize = 11f)
         }
 
-        Spacer(modifier = GlanceModifier.size(6.dp))
+        Spacer(modifier = GlanceModifier.size(4.dp))
 
-        // Sport icons (compact, no reasons)
-        if (day.activities.isNotEmpty()) {
-            SportIconRow(
-                activities = day.activities,
-                showReasons = false
-            )
+        // Primary sport hero
+        PrimarySportHero(activity = primary, iconSize = 32.dp, nameFontSize = 12f, showReason = true)
+
+        if (secondaries.isNotEmpty()) {
+            Spacer(modifier = GlanceModifier.size(4.dp))
+            SecondaryDotRow(activities = secondaries, dotSize = 6.dp, showNames = false)
         }
 
         Spacer(modifier = GlanceModifier.defaultWeight())
 
-        // Key metrics
+        // Wave height + wind metrics
         Row(verticalAlignment = Alignment.CenterVertically) {
             Text(
                 text = day.waveHeightFormatted,
